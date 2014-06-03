@@ -1,0 +1,164 @@
+@htmlFontSize: 16;
+@aside-width: 270rem / @htmlFontSize;
+
+/* CLASSES */
+
+.transition(@elem: all, @duration: .5s, @effect: ease) {
+	-webkit-transition: @elem @duration @effect;
+	transition: @elem @duration @effect;
+}
+
+.box-sizing(@val: border-box) {
+	-webkit-box-sizing: @val;
+	-moz-box-sizing: @val;
+	box-sizing: @val;
+}
+
+.rotate(@deg) {
+	-webkit-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	transform: rotate(@deg);
+}
+
+.transform(@trans) {
+	-webkit-transform: @trans;
+	-ms-transform: @trans;
+	transform: @trans;
+}
+
+.transform-origin(@pos) {
+	-webkit-transform-origin: @pos;
+	-ms-transform-origin: @pos;
+	transform-origin: @pos;
+}
+
+.btn(@width: 100%, @border-color: #ff7a22) {
+	.transition;
+	.box-sizing;
+	display: block;
+	width: @width;
+	height: 35rem / @htmlFontSize;
+	line-height: 25rem / @htmlFontSize;
+	border: 5rem / @htmlFontSize solid @border-color;
+	background: none;
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+	font-size: 12rem / @htmlFontSize;
+	text-transform: uppercase;
+	margin-bottom: 5rem / @htmlFontSize;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	cursor: pointer;
+	padding: 0;
+
+	&:hover {
+		background: @border-color;
+	}
+}
+
+@import "animations";
+
+.transform-tr(@time, @easing) {
+	-webkit-transition: -webkit-transform @time @easing; /* Changed here */ 
+     -moz-transition: -moz-transform @time @easing;
+       -o-transition: -o-transform @time @easing;
+          transition: transform @time @easing;
+}
+
+.list-unstyled {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.robotoSlab {
+	font-family: 'Roboto Slab', serif;
+}
+
+.openSans {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.dinAlt {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.fl-r {
+	float: right;
+}
+.fl-l {
+	float: left;
+}
+
+.opacity(@n: .75) {
+	opacity: @n;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  70% {
+    -webkit-transform: scale(.9);
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    -ms-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  70% {
+    -webkit-transform: scale(.9);
+    -ms-transform: scale(.9);
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}

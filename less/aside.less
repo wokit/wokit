@@ -1,0 +1,383 @@
+aside {
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	width: @aside-width;
+	min-height: 100%;
+	background: rgba(0, 0, 0, .5);
+	z-index: 5;
+
+	.mobile-switch {
+		background: none repeat scroll 0 0 #313131;
+	    bottom: 1.05rem;
+	    color: #FFFFFF;
+	    cursor: pointer;
+	    display: none;
+	    font-size: 2em;
+	    height: 3rem;
+	    line-height: 2.7rem;
+	    padding: 0 0.4em 0 1rem;
+	    position: absolute;
+	    right: 0.7em;
+	    z-index: 1;
+	}
+
+	.add-to-cart {
+		.btn(10.3125rem);
+		margin: 0 auto 1rem;
+		line-height: 1.863rem;
+	}
+	.make-order {
+		.btn(10.3125rem, #5dc1af);
+		margin: 0 auto;
+		line-height: 1.863rem;
+
+		.fa {
+			margin: 0 10rem / @htmlFontSize 0 0;
+		}
+	}
+	.footer-links {
+		.list-unstyled;
+		margin: 63rem / @htmlFontSize 0 0;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 .4rem;
+
+			a {
+				.transition(opacity);
+				color: #fff;
+				text-decoration: none;
+
+				&:hover {
+					.opacity;
+				}
+			}
+		}
+		.visa {
+			display: block;
+			width: 34px;
+			height: 22px;
+			background: url(../img/sprites.png) no-repeat 0 -250px;
+		}
+		.mcard {
+			display: block;
+			width: 37px;
+			height: 23px;
+			margin: 0 .6rem 0 0;
+			background: url(../img/sprites.png) no-repeat -100px -250px;
+		}
+	}
+}
+
+.logo {
+	display: block;
+	width: 170rem / @htmlFontSize;
+	height: 60rem / @htmlFontSize;
+	//margin: 64rem / @htmlFontSize auto 40rem / @htmlFontSize;
+	margin: 0 auto;
+	background: url(../img/main/logo.png) no-repeat center center e('/') 100% auto;
+	text-indent: -9999px;
+}
+
+.prod-type {
+	.list-unstyled;
+	margin: 0 25rem / @htmlFontSize;
+
+	.prod-item {
+		.transition(opacity, .4s, ease);
+
+		display: inline-block;
+		width: 50rem / @htmlFontSize;
+		height: 50rem / @htmlFontSize;
+		margin: 0 35rem / @htmlFontSize 0 0;
+
+		&.food {
+			background: url(../img/sprites.png) no-repeat 2.9% 0 e('/') 560% 570%;
+		}
+
+		&.desert {
+			background: url(../img/sprites.png) no-repeat 50.8% 0 e('/') 560% 570%;
+		}
+
+		&.drinks {
+			background: url(../img/sprites.png) no-repeat 97.5% 0 e('/') 560% 570%;
+
+			a span {
+				margin-left: -5rem / @htmlFontSize;
+			}			
+		}
+
+		&:last-child {
+			margin: 0;
+		}
+
+		&:hover {
+			opacity: .65;
+
+			a span {
+				opacity: 1;
+			}
+		}
+
+		a {
+			position: relative;
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			text-decoration: none;
+
+			span {
+				.transition(opacity);
+				opacity: 0;
+				position: absolute;
+				bottom: -17.5rem / @htmlFontSize;
+				width: 100%;
+				text-align: center;
+				display: block;
+				color: #fff;
+				text-transform: uppercase;
+				.robotoSlab;
+				font-size: 12rem / @htmlFontSize;
+			}
+		}
+	}
+}
+
+.prod-select {
+	.box-sizing;
+	position: relative;
+	width: 100%;
+	height: 13rem / @htmlFontSize;
+	margin: 13rem / @htmlFontSize 0 0;
+
+	&:before {
+		content: "";
+		.box-sizing;
+		position: absolute;
+		top: 4px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: 1px solid #a3a2a2;
+	}
+
+	.prod-select-part {
+		display: inline-block;
+		width: 33.333333%;
+		height: 100%;
+		background: #b1b1b1;
+	}
+
+	.part-2 {
+		background: #aaa;
+	}
+
+	.part-3 {
+		background: #929292;
+	}
+}
+
+.orders-win {
+	.transition;
+	position: relative;
+	height: 25.7rem;
+	overflow: auto;
+	margin: 29rem / @htmlFontSize 0 2rem;
+	width: 105%;
+}
+
+.ord-scroll {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 10rem / @htmlFontSize;
+
+	.ord-scroll-dot {
+		.transition(height, .25s, ease);
+		position: relative;
+		margin: 0 auto;
+		height: 5%;
+
+		&.active {
+			height: 25%;
+			&:after {
+				background: #ec6524;
+			}
+		}
+		&.b-active {
+			height: 17.5%;
+		}
+		&.bb-active {
+			height: 12.5%;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			display: inline-block;
+			vertical-align: middle;
+			top: 50%;
+			margin-top: -2.5px;
+			width: 5px;
+			height: 5px;
+			border-radius: 2.5px;
+			background: #fff;
+		}
+	}
+}
+
+.orders-ul {
+	.list-unstyled;
+
+	.orders-li {
+		position: relative;
+		.box-sizing;
+		width: 221rem / @htmlFontSize;
+		margin: 5rem / @htmlFontSize auto 0;
+		padding: 38rem / @htmlFontSize 0 1.3rem;
+		border: 4rem / @htmlFontSize solid #b8b2b0;
+		border-top: none;
+		border-radius: 3px;
+		color: #fff;
+		cursor: pointer;
+
+		.name {
+			position: absolute;
+			top: -.6em;
+			left: 0;
+			margin: 0 0 0 1.2rem;
+			padding: 0 1rem;
+
+			font-size: 17px;
+
+			.left-line {
+				position: absolute;
+				top: 50%;
+				left: -22rem / @htmlFontSize;
+				width: 1.2rem;
+				margin: -2px 0 0;
+				border-top: 3px solid #b8b2b0;
+				border-radius: 3px 0 0 0;
+			}
+
+			.name-input {
+				width: 100px;
+				border: none;
+				background: none;
+
+				color: #fff;
+
+				&:focus {
+					outline: none;
+				}
+
+				&:active {
+					outline: none;					
+				}
+			}
+		}
+
+		.right-line {
+			position: absolute;
+			top: 0;
+			right: -3px;
+			width: auto;
+			margin: 0 0;
+			border-top: 3px solid #b8b2b0;
+			border-radius: 0 3px 0 0;
+		}
+
+		&.active {
+			border-color: #ff7a22;
+
+			.right-line, .left-line {
+				border-color: #ff7a22;
+			}
+		}
+	}
+
+	.orders-price {
+		margin: 0 0 2rem 3rem;
+		line-height: 1.75em;
+		color: #fff;
+		font-size: 18em / @htmlFontSize;
+		font-weight: 300;
+
+		&:last-child {
+			margin: 0 0 0 2.6rem;
+		}
+	}
+
+	.order-prods {
+		margin: 0;
+		padding: 0 0 0 15rem / @htmlFontSize;
+
+		dt {
+			position: relative;
+			display: inline-block;
+			margin: 0 .5rem 8rem / @htmlFontSize 0;
+			padding: 0 60rem / @htmlFontSize 0 0;
+			font-size: 12.5em / @htmlFontSize;
+		}
+		dd {
+			margin: 0 0 18rem / @htmlFontSize;
+			font-size: 13em / @htmlFontSize;
+			font-weight: 300;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+		.xl-port {
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			right: 32rem / @htmlFontSize;
+			width: 20px;
+			height: 20px;
+			border-radius: 10px;
+			line-height: 19px;
+			text-align: center;
+			background: #fff;
+
+			&:before {
+				content: "XL";
+				display: inline-block;
+				color: #000;
+				.robotoSlab;
+				font-style: normal;
+				font-size: 10rem / @htmlFontSize;
+			}
+		}
+		.prods-cross {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 22px;
+			height: 19px;
+			background: url(../img/sprites.png) no-repeat 0 -100px;
+
+			cursor: pointer;
+
+			&:hover {
+				background-position: -100px -100px;
+			}		
+		}
+	}
+}
+
+.orders-total {
+	margin: 0 0 2rem 1.8rem;
+	color: #fff;
+	font-size: 29em / @htmlFontSize;
+	font-weight: 300;
+
+	strong {
+		font-weight: 500;
+	}
+}
