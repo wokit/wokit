@@ -1,6 +1,7 @@
 var grphm_slider = (function(){
 	var slide_class = 'ac-slide'
 		slide = $('.' + slide_class),
+		season = $('.season'),
 		amount = slide.length,
 		act_id = 0,
 		allow = true,
@@ -21,6 +22,8 @@ var grphm_slider = (function(){
 	var term = function(id) {
 		terms.siblings().removeClass('active');
 		terms.eq(id).addClass('active');
+		season.siblings().removeClass('active');
+		season.eq(id).addClass('active');
 	}
 
 	var next = function() {
@@ -80,6 +83,7 @@ var grphm_slider = (function(){
 	var init = function() {
 		slide.eq(0).addClass('active');
 		terms.eq(0).addClass('active');
+		season.eq(0).addClass('active');
 	};
 
 	return { init : init }

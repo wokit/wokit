@@ -26,12 +26,12 @@ aside {
 	.add-to-cart {
 		.btn(10.3125rem);
 		margin: 0 auto 1rem;
-		line-height: 1.863rem;
+		line-height: 1.363rem;
 	}
 	.make-order {
 		.btn(10.3125rem, #5dc1af);
 		margin: 0 auto;
-		line-height: 1.863rem;
+		line-height: 1.363rem;
 
 		.fa {
 			margin: 0 10rem / @htmlFontSize 0 0;
@@ -41,6 +41,7 @@ aside {
 		.list-unstyled;
 		margin: 63rem / @htmlFontSize 0 0;
 		text-align: center;
+		font-size: 22px;
 
 		li {
 			display: inline-block;
@@ -75,7 +76,7 @@ aside {
 
 .logo {
 	display: block;
-	width: 170rem / @htmlFontSize;
+	width: 8.65rem;
 	height: 60rem / @htmlFontSize;
 	//margin: 64rem / @htmlFontSize auto 40rem / @htmlFontSize;
 	margin: 0 auto;
@@ -93,7 +94,7 @@ aside {
 		display: inline-block;
 		width: 50rem / @htmlFontSize;
 		height: 50rem / @htmlFontSize;
-		margin: 0 35rem / @htmlFontSize 0 0;
+		margin: 0 1.9rem 0 0;
 
 		&.food {
 			background: url(../img/sprites.png) no-repeat 2.9% 0 e('/') 560% 570%;
@@ -123,6 +124,14 @@ aside {
 			}
 		}
 
+		&.active {
+			opacity: .65;
+
+			a span {
+				opacity: 1;
+			}
+		}
+
 		a {
 			position: relative;
 			display: inline-block;
@@ -140,6 +149,7 @@ aside {
 				display: block;
 				color: #fff;
 				text-transform: uppercase;
+				line-height: .75em;
 				.robotoSlab;
 				font-size: 12rem / @htmlFontSize;
 			}
@@ -151,14 +161,15 @@ aside {
 	.box-sizing;
 	position: relative;
 	width: 100%;
-	height: 13rem / @htmlFontSize;
-	margin: 13rem / @htmlFontSize 0 0;
+	height: 11rem / @htmlFontSize;
+	margin: 1rem 0 0;
+	top: -2px;
 
 	&:before {
-		content: "";
+		//content: "";
 		.box-sizing;
 		position: absolute;
-		top: 4px;
+		top: 6px;
 		left: 0;
 		width: 100%;
 		height: 100%;
@@ -181,21 +192,34 @@ aside {
 	}
 }
 
+.cart-win {
+	position: relative;
+	overflow: hidden;
+}
+
 .orders-win {
 	.transition;
+	.box-sizing;
 	position: relative;
 	height: 25.7rem;
 	overflow: auto;
 	margin: 29rem / @htmlFontSize 0 2rem;
-	width: 105%;
+	width: 110%;
+	padding-right: 15%;
 }
 
 .ord-scroll {
+	.transition(opacity);
 	position: absolute;
-	top: 0;
+	top: 25rem / @htmlFontSize;
 	right: 0;
 	height: 100%;
-	width: 10rem / @htmlFontSize;
+	width: 10%;
+	opacity: 0;
+
+	&.active {
+		opacity: 1;
+	}
 
 	.ord-scroll-dot {
 		.transition(height, .25s, ease);
@@ -204,25 +228,26 @@ aside {
 		height: 5%;
 
 		&.active {
-			height: 25%;
+			height: 18%;
 			&:after {
 				background: #ec6524;
 			}
 		}
 		&.b-active {
-			height: 17.5%;
+			height: 14%;
 		}
 		&.bb-active {
-			height: 12.5%;
+			height: 10%;
 		}
 
 		&:after {
 			content: "";
 			position: absolute;
 			display: inline-block;
-			vertical-align: middle;
 			top: 50%;
 			margin-top: -2.5px;
+			left: 50%;
+			margin-left: -2.5px;
 			width: 5px;
 			height: 5px;
 			border-radius: 2.5px;
@@ -232,6 +257,7 @@ aside {
 }
 
 .orders-ul {
+	position: relative;
 	.list-unstyled;
 
 	.orders-li {
@@ -240,7 +266,7 @@ aside {
 		width: 221rem / @htmlFontSize;
 		margin: 5rem / @htmlFontSize auto 0;
 		padding: 38rem / @htmlFontSize 0 1.3rem;
-		border: 4rem / @htmlFontSize solid #b8b2b0;
+		border: 2px solid #b8b2b0;
 		border-top: none;
 		border-radius: 3px;
 		color: #fff;
@@ -248,27 +274,21 @@ aside {
 
 		.name {
 			position: absolute;
-			top: -.6em;
+			top: -.65em;
 			left: 0;
 			margin: 0 0 0 1.2rem;
-			padding: 0 1rem;
+			padding: 0 .5rem;
 
 			font-size: 17px;
 
-			.left-line {
-				position: absolute;
-				top: 50%;
-				left: -22rem / @htmlFontSize;
-				width: 1.2rem;
-				margin: -2px 0 0;
-				border-top: 3px solid #b8b2b0;
-				border-radius: 3px 0 0 0;
-			}
+			
 
 			.name-input {
-				width: 100px;
+				width: 140rem / @htmlFontSize;
 				border: none;
 				background: none;
+				font-weight: 300;
+				font-size: 14px;
 
 				color: #fff;
 
@@ -281,14 +301,22 @@ aside {
 				}
 			}
 		}
-
+		.left-line {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 1.2rem;
+				margin: 0px 0 0;
+				border-top: 2px solid #b8b2b0;
+				border-radius: 3px 0 0 0;
+			}
 		.right-line {
 			position: absolute;
 			top: 0;
-			right: -3px;
+			right: -1px;
 			width: auto;
 			margin: 0 0;
-			border-top: 3px solid #b8b2b0;
+			border-top: 2px solid #b8b2b0;
 			border-radius: 0 3px 0 0;
 		}
 
@@ -360,12 +388,12 @@ aside {
 			right: 0;
 			width: 22px;
 			height: 19px;
-			background: url(../img/sprites.png) no-repeat 0 -100px;
+			background: url(../img/cross.svg) no-repeat center center;
 
 			cursor: pointer;
 
 			&:hover {
-				background-position: -100px -100px;
+				background-image: url(../img/cross-active.svg);
 			}		
 		}
 	}
@@ -374,8 +402,9 @@ aside {
 .orders-total {
 	margin: 0 0 2rem 1.8rem;
 	color: #fff;
-	font-size: 29em / @htmlFontSize;
-	font-weight: 300;
+	font-size: 31em / @htmlFontSize;
+	font-weight: 400;
+	font-family: 'din_alternatebold',sans-serif;
 
 	strong {
 		font-weight: 500;

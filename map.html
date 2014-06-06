@@ -31,89 +31,77 @@
                 </h1>
                 <ul class="prod-type">
                     <li class="prod-item food">
-                        <a href="#"></a>
+                        <a href="index.html"><span>Еда</span></a>
                     <li class="prod-item desert">
-                        <a href="#"></a>
+                        <a href="#"><span>Десерт</span></a>
                     <li class="prod-item drinks">
-                        <a href="#"></a>
+                        <a href="drink.html"><span>Напитки</span></a>
                 </ul>
                 <div class="prod-select">
                     <div class="prod-select-part part-1"></div><!--
                  --><div class="prod-select-part part-2"></div><!--
                  --><div class="prod-select-part part-3"></div>
                 </div>
-                <dl class="orders-ul">
-                    <dt class="orders-li">
-                        <div class="name">
-                            <div class="left-line"></div>
-                            <input class="name-input" type="text" placeholder="Ваше имя">
-                        </div>
-                        <div class="right-line"></div>
-                        <dl class="order-prods">
-                            <dt>Оранж Чикен Рис и Изюм и Курица<div class="prods-cross"></div></dt>
-                                <dd>440 руб</dd>
-                            <dt>Пиво Дон Живое 2.5<div class="prods-cross"></div></dt>
-                                <dd>110 руб</dd>
+                <div class="cart-win">
+                    <div class="mobile-ordername">Ваш заказ: <span>2000 руб</span></div>
+                    <div class="ord-scroll"></div>
+                    <div class="orders-win">
+                        <dl class="orders-ul">
+                            <dt class="orders-li" data-name="" data-id="1">
+                                <div class="name">
+                                    <input class="name-input" maxlength="15" type="text" placeholder="Ваше имя">
+                                    <div class="ur-order">Ваш заказ</div>
+                                </div>
+                                
+                                    <div class="left-line"></div>
+                                <div class="right-line"></div>
+                                <dl class="order-prods">
+                                    <dt class="one-item" data-id="3">Оранж Чикен Рис и Изюм и Курица<i class="xl-port"></i><div class="prods-cross"></div></dt>
+                                        <dd>440 руб</dd>
+                                </dl>
+                            </dt>
+                            <dd class="orders-price">
+                                <span>550</span> руб
+                            </dd>
+                            <!--<dt class="orders-li" data-name="" data-id="2">
+                                <div class="name">
+                                    <div class="left-line"></div>
+                                    <input class="name-input" type="text" placeholder="Ваше имя">
+                                </div>
+                                <div class="right-line"></div>
+                                <dl class="order-prods">
+                                </dl>
+                            </dt>
+                            <dd class="orders-price">
+                                <span>0</span> руб
+                            </dd>-->
                         </dl>
-                    </dt>
-                    <dd class="orders-price">
-                        550 руб
-                    </dd>
-                    <dt class="orders-li">
-                        <div class="name">
-                            <div class="left-line"></div>
-                            <input class="name-input" type="text" placeholder="Ваше имя">
-                        </div>
-                        <div class="right-line"></div>
-                        <dl class="order-prods">
-                            <dt>Оранж Чикен Рис и Изюм и Курица<div class="prods-cross"></div></dt>
-                                <dd>440 руб</dd>
-                            <dt>Пиво Дон Ледяное 2.5<div class="prods-cross"></div></dt>
-                                <dd>110 руб</dd>
-                        </dl>
-                    </dt>
-                    <dd class="orders-price">
-                        550 руб
-                    </dd>
-                    <dt class="orders-li">
-                        <div class="name">
-                            <div class="left-line"></div>
-                            <input class="name-input" type="text" placeholder="Ваше имя">
-                        </div>
-                        <div class="right-line"></div>
-                        <dl class="order-prods">
-                            <dt>Оранж Чикен Рис и Изюм и Курица<div class="prods-cross"></div></dt>
-                                <dd>440 руб</dd>
-                            <dt>Пиво Дон Живое 2.5<div class="prods-cross"></div></dt>
-                                <dd>110 руб</dd>
-                        </dl>
-                    </dt>
-                    <dd class="orders-price">
-                        550 руб
-                    </dd>
-                </dl>
-                <div class="orders-total">
-                    <span class="uppercase">Итого:</span> <strong>700</strong> руб
+                    </div>
                 </div>
-                <div>
-                    <a class="add-to-cart" href="#"><i class="_plus"></i> Добавить в заказ</a>   
-                    <a class="make-order pop-btn" data-id="order" href="#"><span class="fa fa-shopping-cart"></span> Оформить заказ</a>
-                </div>                    
-                <ul class="footer-links">
-                    <li><a href="#" class="visa"></a>
-                    <li><a href="#" class="mcard"></a>
-                    <li><a href="#" class="fa fa-vk"></a>
-                    <li><a href="#" class="fa fa-facebook-square"></a>
-                    <li><a href="#" class="fa fa-instagram"></a>
-                </ul>
+                <div class="aside-bottom">
+                    <div class="orders-total">
+                        <span class="uppercase">Итого:</span> <strong class="final-price">700</strong> руб
+                    </div>
+                    <div class="aside-btns">   
+                        <button class="make-order pop-btn" data-id="order"><span class="fa fa-shopping-cart"></span> Оформить заказ</button>
+                        <div class="mobile-switch"><span class="fa fa-angle-double-up"></span></div>
+                    </div>                    
+                    <ul class="footer-links">
+                        <li><a href="#" class="visa"></a>
+                        <li><a href="#" class="mcard"></a>
+                        <li><a href="#" class="fa fa-vk"></a>
+                        <li><a href="#" class="fa fa-facebook-square"></a>
+                        <li><a href="#" class="fa fa-instagram"></a>
+                    </ul>
+                </div>
             </aside>
             <main>
-                <div class="phone-block">
+                <div class="phone-block phb-map">
                     <a href="tel:+78633220220" class="phone">3 - 220 - 220</a>
                     <span class="phone-icons"><a href="#" class="ph-map"></a><a href="#" class="ph-wok"></a><a href="#" class="ph-star"></a></span>
                 </div>
             </main>
-            <section class="overlay" data-id="order">
+            <section class="overlay p_order" data-id="order">
                 <div class="black-screen"></div>
                 <div class="ord-block">
                     <div class="ord-title">

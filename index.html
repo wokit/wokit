@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:100,400,600,700,300&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic,cyrillic-ext' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="css/normalize.css">
@@ -29,28 +29,30 @@
                     <span class="logo">Wok it</span>
                 </h1>
                 <ul class="prod-type">
-                    <li class="prod-item food">
-                        <a href="#"><span>Еда</span></a>
+                    <li class="prod-item food active">
+                        <a href="index.html"><span>Еда</span></a>
                     <li class="prod-item desert">
                         <a href="#"><span>Десерт</span></a>
                     <li class="prod-item drinks">
-                        <a href="#"><span>Напитки</span></a>
+                        <a href="drink.html"><span>Напитки</span></a>
                 </ul>
                 <div class="prod-select">
-                    <div class="prod-select-part part-1"></div><!--
+                    <div class="prod-select-part part-3"></div><!--
                  --><div class="prod-select-part part-2"></div><!--
-                 --><div class="prod-select-part part-3"></div>
+                 --><div class="prod-select-part part-1"></div>
                 </div>
-                <div class="relative">
+                <div class="cart-win">
+                    <div class="mobile-ordername">Ваш заказ: <span>2000 руб</span></div>
                     <div class="ord-scroll"></div>
                     <div class="orders-win">
                         <dl class="orders-ul">
                             <dt class="orders-li" data-name="" data-id="1">
                                 <div class="name">
-                                    <div class="left-line"></div>
-                                    <input class="name-input" type="text" placeholder="Ваше имя">
-                                    <div class="mobile-ordername">Ваш заказ: <span>2000 руб</span></div>
+                                    <input class="name-input" maxlength="15" type="text" placeholder="Ваше имя">
+                                    <div class="ur-order">Ваш заказ</div>
                                 </div>
+                                
+                                    <div class="left-line"></div>
                                 <div class="right-line"></div>
                                 <dl class="order-prods">
                                     <dt class="one-item" data-id="3">Оранж Чикен Рис и Изюм и Курица<i class="xl-port"></i><div class="prods-cross"></div></dt>
@@ -75,39 +77,94 @@
                         </dl>
                     </div>
                 </div>
-                <div class="orders-total">
-                    <span class="uppercase">Итого:</span> <strong class="final-price">700</strong> руб
+                <div class="aside-bottom">
+                    <div class="orders-total">
+                        <span class="uppercase">Итого:</span> <strong class="final-price">700</strong> руб
+                    </div>
+                    <div class="aside-btns">
+                        <button class="add-to-cart"><i class="_plus"></i> Добавить корзину</button>   
+                        <button class="make-order pop-btn" data-id="order"><span class="fa fa-shopping-cart"></span> Оформить заказ</button>
+                        <div class="mobile-switch"><span class="fa fa-angle-double-up"></span></div>
+                    </div>                    
+                    <ul class="footer-links">
+                        <li><a href="#" class="visa"></a>
+                        <li><a href="#" class="mcard"></a>
+                        <li><a href="#" class="fa fa-vk"></a>
+                        <li><a href="#" class="fa fa-facebook-square"></a>
+                        <li><a href="#" class="fa fa-instagram"></a>
+                    </ul>
                 </div>
-                <div class="aside-btns">
-                    <button class="add-to-cart"><i class="_plus"></i> Добавить заказ</button>   
-                    <button class="make-order pop-btn" data-id="order"><span class="fa fa-shopping-cart"></span> Оформить заказ</button>
-                    <div class="mobile-switch"><span class="fa fa-angle-double-up"></span></div>
-                </div>                    
-                <ul class="footer-links">
-                    <li><a href="#" class="visa"></a>
-                    <li><a href="#" class="mcard"></a>
-                    <li><a href="#" class="fa fa-vk"></a>
-                    <li><a href="#" class="fa fa-facebook-square"></a>
-                    <li><a href="#" class="fa fa-instagram"></a>
-                </ul>
             </aside>
             <main>
                 <div class="select-block select-add">
                     <a href="#" class="select-arrow"></a>
                     <div class="prd-window">
                         <div class="prd-inside">
-                            <div class="product-item" data-img="chiken" data-id="1">
+                            <div class="product-item" data-img="chiken" data-id="2">
                                 <div class="select-img">
-                                    <img src="img/products/chiken.jpg">
+                                    <img src="img/products/pre-1.png">
                                 </div>
                                 <div class="select-title clearfix">
-                                    Курица<br>Кунг-Пао
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
+                                    Курица генерала Тсо
+                                    <div class="weight-info"><span class="price"><span class="price-num">320</span> р.</span><span>220 гр</span><i class="spice"></i></div>
                                 </div>
                                 <div class="hidden info-toselect">
                                     <div class="select-info">
-                                        Маринованные кусочки белого куриного мяса, обжаренные в Wok'е с в меру острым апельсиновым соусом.
-                                        Курица Генерала Тсо:  Кусочки темного куриного мяса, обжаренные в Wok'е со сладковатым соевым соусом.
+                                        Говядина, курица, морепродукты, разные виды грибов и овощное ассорти специально для вегетарианцев. Огромный выбор соусов и заправок. 
+                                    </div>
+                                    <div class="weight-info">
+                                        <span class="price">320 р.</span><span>220 гр</span><span>220 кк</span>
+                                        <i class="spice"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item" data-img="sample" data-id="2">
+                                <div class="select-img">
+                                    <img src="img/products/pre-2.png">
+                                </div>
+                                <div class="select-title clearfix">
+                                    Курица в апельсиновом соусе
+                                    <div class="weight-info"><span class="price"><span class="price-num">420</span> р.</span><span>220 гр</span><i class="spice"></i></div>
+                                </div>
+                                <div class="hidden info-toselect">
+                                    <div class="select-info">
+                                        Классическая японская пшеничная лапша с яйцом и зеленью – отличный вариант для легкого обеда, пользующееся огромной популярностью у азиатской молодежи. 
+                                    </div>
+                                    <div class="weight-info">
+                                        <span class="price">420 р.</span><span>220 гр</span><span>220 кк</span>
+                                        <i class="spice"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item" data-img="chiken" data-id="2">
+                                <div class="select-img">
+                                    <img src="img/products/pre-13.png">
+                                </div>
+                                <div class="select-title clearfix">
+                                    Курица Кунг-Пао
+                                    <div class="weight-info"><span class="price"><span class="price-num">420</span> р.</span><span>220 гр</span><i class="spice"></i></div>
+                                </div>
+                                <div class="hidden info-toselect">
+                                    <div class="select-info">
+                                        Легендарный мисо-суп из водорослей с острым соусом и кунжутом насыщен витаминами и легок. Он идеально подойдет динамичным и легким на подъем людям.
+                                    </div>
+                                    <div class="weight-info">
+                                        <span class="price">420 р.</span><span>220 гр</span><span>220 кк</span>
+                                        <i class="spice"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item" data-img="sample" data-id="2">
+                                <div class="select-img">
+                                    <img src="img/products/pre-3.png">
+                                </div>
+                                <div class="select-title clearfix">
+                                    Курица с ананасами и кешью
+                                    <div class="weight-info"><span class="price"><span class="price-num">220</span> р.</span><span>220 гр</span><i class="spice"></i></div>
+                                </div>
+                                <div class="hidden info-toselect">
+                                    <div class="select-info">
+                                        Говядина, курица, морепродукты, разные виды грибов и овощное ассорти специально для вегетарианцев. Огромный выбор соусов и заправок. 
                                     </div>
                                     <div class="weight-info">
                                         <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
@@ -117,149 +174,167 @@
                             </div>
                             <div class="product-item" data-img="chiken" data-id="2">
                                 <div class="select-img">
-                                    <img src="img/products/chiken.jpg">
+                                    <img src="img/products/pre-4.png">
                                 </div>
                                 <div class="select-title clearfix">
-                                    Курица<br>Кунг-Пао
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
+                                    Тофу жаренный
+                                    <div class="weight-info"><span class="price"><span class="price-num">520</span> р.</span><span>220 гр</span><i class="spice"></i></div>
                                 </div>
                                 <div class="hidden info-toselect">
                                     <div class="select-info">
-                                        Маринованные кусочки белого куриного мяса, обжаренные в Wok'е с в меру острым апельсиновым соусом.
-                                        Курица Генерала Тсо:  Кусочки темного куриного мяса, обжаренные в Wok'е со сладковатым соевым соусом.
+                                        Классическая японская пшеничная лапша с яйцом и зеленью – отличный вариант для легкого обеда, пользующееся огромной популярностью у азиатской молодежи. 
                                     </div>
                                     <div class="weight-info">
-                                        <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
+                                        <span class="price">520 р.</span><span>220 гр</span><span>220 кк</span>
                                         <i class="spice"></i>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-item" data-img="chiken" data-id="2">
+                            <div class="product-item" data-img="sample" data-id="3">
                                 <div class="select-img">
-                                    <img src="img/products/chiken.jpg">
+                                    <img src="img/products/pre-5.png">
                                 </div>
                                 <div class="select-title clearfix">
-                                    Курица<br>Кунг-Пао
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
+                                    Говядина по-пекински
+                                    <div class="weight-info"><span class="price"><span class="price-num">620</span> р.</span><span>220 гр</span><i class="spice"></i></div>
                                 </div>
                                 <div class="hidden info-toselect">
                                     <div class="select-info">
-                                        Маринованные кусочки белого куриного мяса, обжаренные в Wok'е с в меру острым апельсиновым соусом.
-                                        Курица Генерала Тсо:  Кусочки темного куриного мяса, обжаренные в Wok'е со сладковатым соевым соусом.
+                                        Легендарный мисо-суп из водорослей с острым соусом и кунжутом насыщен витаминами и легок. Он идеально подойдет динамичным и легким на подъем людям.
                                     </div>
                                     <div class="weight-info">
-                                        <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
-                                        <i class="spice"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-item" data-img="chiken" data-id="2">
-                                <div class="select-img">
-                                    <img src="img/products/chiken.jpg">
-                                </div>
-                                <div class="select-title clearfix">
-                                    Курица<br>Кунг-Пао
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
-                                </div>
-                                <div class="hidden info-toselect">
-                                    <div class="select-info">
-                                        Маринованные кусочки белого куриного мяса, обжаренные в Wok'е с в меру острым апельсиновым соусом.
-                                        Курица Генерала Тсо:  Кусочки темного куриного мяса, обжаренные в Wok'е со сладковатым соевым соусом.
-                                    </div>
-                                    <div class="weight-info">
-                                        <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
-                                        <i class="spice"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-item" data-img="chiken" data-id="2">
-                                <div class="select-img">
-                                    <img src="img/products/chiken.jpg">
-                                </div>
-                                <div class="select-title clearfix">
-                                    Курица<br>Кунг-Пао
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
-                                </div>
-                                <div class="hidden info-toselect">
-                                    <div class="select-info">
-                                        Маринованные кусочки белого куриного мяса, обжаренные в Wok'е с в меру острым апельсиновым соусом.
-                                        Курица Генерала Тсо:  Кусочки темного куриного мяса, обжаренные в Wok'е со сладковатым соевым соусом.
-                                    </div>
-                                    <div class="weight-info">
-                                        <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
-                                        <i class="spice"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-item" data-img="chiken" data-id="2">
-                                <div class="select-img">
-                                    <img src="img/products/chiken.jpg">
-                                </div>
-                                <div class="select-title clearfix">
-                                    Курица<br>Кунг-Пао
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
-                                </div>
-                                <div class="hidden info-toselect">
-                                    <div class="select-info">
-                                        Маринованные кусочки белого куриного мяса, обжаренные в Wok'е с в меру острым апельсиновым соусом.
-                                        Курица Генерала Тсо:  Кусочки темного куриного мяса, обжаренные в Wok'е со сладковатым соевым соусом.
-                                    </div>
-                                    <div class="weight-info">
-                                        <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
-                                        <i class="spice"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-item" data-img="chiken" data-id="2">
-                                <div class="select-img">
-                                    <img src="img/products/chiken.jpg">
-                                </div>
-                                <div class="select-title clearfix">
-                                    Курица<br>Кунг-Пао
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
-                                </div>
-                                <div class="hidden info-toselect">
-                                    <div class="select-info">
-                                        Маринованные кусочки белого куриного мяса, обжаренные в Wok'е с в меру острым апельсиновым соусом.
-                                        Курица Генерала Тсо:  Кусочки темного куриного мяса, обжаренные в Wok'е со сладковатым соевым соусом.
-                                    </div>
-                                    <div class="weight-info">
-                                        <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
-                                        <i class="spice"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-item" data-img="chiken" data-id="2">
-                                <div class="select-img">
-                                    <img src="img/products/chiken.jpg">
-                                </div>
-                                <div class="select-title clearfix">
-                                    Курица<br>Кунг-Пао
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
-                                </div>
-                                <div class="hidden info-toselect">
-                                    <div class="select-info">
-                                        Маринованные кусочки белого куриного мяса, обжаренные в Wok'е с в меру острым апельсиновым соусом.
-                                        Курица Генерала Тсо:  Кусочки темного куриного мяса, обжаренные в Wok'е со сладковатым соевым соусом.
-                                    </div>
-                                    <div class="weight-info">
-                                        <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
+                                        <span class="price">620 р.</span><span>220 гр</span><span>220 кк</span>
                                         <i class="spice"></i>
                                     </div>
                                 </div>
                             </div>
                             <div class="product-item" data-img="chiken" data-id="3">
                                 <div class="select-img">
-                                    <img src="img/products/chiken.jpg">
+                                    <img src="img/products/pre-6.png">
                                 </div>
                                 <div class="select-title clearfix">
-                                    Курица<br>Кунг-Пао
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
+                                    Говядина с брокколи
+                                    <div class="weight-info"><span class="price"><span class="price-num">620</span> р.</span><span>220 гр</span><i class="spice"></i></div>
                                 </div>
                                 <div class="hidden info-toselect">
                                     <div class="select-info">
-                                        Маринованные кусочки белого куриного мяса, обжаренные в Wok'е с в меру острым апельсиновым соусом.
-                                        Курица Генерала Тсо:  Кусочки темного куриного мяса, обжаренные в Wok'е со сладковатым соевым соусом.
+                                        Говядина, курица, морепродукты, разные виды грибов и овощное ассорти специально для вегетарианцев. Огромный выбор соусов и заправок. 
+                                    </div>
+                                    <div class="weight-info">
+                                        <span class="price">620 р.</span><span>220 гр</span><span>220 кк</span>
+                                        <i class="spice"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item" data-img="sample" data-id="3">
+                                <div class="select-img">
+                                    <img src="img/products/pre-7.png">
+                                </div>
+                                <div class="select-title clearfix">
+                                    Креветки по-сычуански
+                                    <div class="weight-info"><span class="price"><span class="price-num">620</span> р.</span><span>220 гр</span><i class="spice"></i></div>
+                                </div>
+                                <div class="hidden info-toselect">
+                                    <div class="select-info">
+                                        Классическая японская пшеничная лапша с яйцом и зеленью – отличный вариант для легкого обеда, пользующееся огромной популярностью у азиатской молодежи. 
+                                    </div>
+                                    <div class="weight-info">
+                                        <span class="price">620 р.</span><span>220 гр</span><span>220 кк</span>
+                                        <i class="spice"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info"></div>
+                </div>
+                <div class="select-block select-main">
+                    <a href="#" class="select-arrow arrow-top"></a>
+                    <div class="prd-window">
+                        <div class="prd-inside">
+                            <div class="product-item" data-img="sample" data-price="30" data-id="1">
+                                <div class="select-img">
+                                    <img src="img/products/pre-8.png">
+                                </div>
+                                <div class="select-title clearfix">
+                                    Белый рис
+                                    <div class="weight-info"><span class="price"><span class="price-num">220</span> р.</span><span>220 гр</span><i class="spice"></i></div>
+                                </div>
+                                <div class="hidden info-toselect">
+                                    <div class="select-info">
+                                        Традиционный жареный рис с овощами и соусами на ваш выбор. Вам предоставляется полная свобода в выборе ингредиентов – мы убеждены, что любое сочетание не оставит вас равнодушным.
+                                    </div>
+                                    <div class="weight-info">
+                                        <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
+                                        <i class="spice"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item" data-img="rise" data-price="30" data-id="1">
+                                <div class="select-img">
+                                    <img src="img/products/pre-9.png">
+                                </div>
+                                <div class="select-title clearfix">
+                                    Жарренный рис с овощами
+                                    <div class="weight-info"><span class="price"><span class="price-num">220</span> р.</span><span>220 гр</span><i class="spice"></i></div>
+                                </div>
+                                <div class="hidden info-toselect">
+                                    <div class="select-info">
+                                        Традиционный жареный рис с овощами и соусами на ваш выбор. Вам предоставляется полная свобода в выборе ингредиентов – мы убеждены, что любое сочетание не оставит вас равнодушным.
+                                    </div>
+                                    <div class="weight-info">
+                                        <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
+                                        <i class="spice"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item" data-img="sample" data-price="30" data-id="1">
+                                <div class="select-img">
+                                    <img src="img/products/pre-10.png">
+                                </div>
+                                <div class="select-title clearfix">
+                                    Овощи Wok
+                                    <div class="weight-info"><span class="price"><span class="price-num">220</span> р.</span><span>220 гр</span><i class="spice"></i></div>
+                                </div>
+                                <div class="hidden info-toselect">
+                                    <div class="select-info">
+                                         Традиционный жареный рис с овощами и соусами на ваш выбор. Вам предоставляется полная свобода в выборе ингредиентов – мы убеждены, что любое сочетание не оставит вас равнодушным.
+                                    </div>
+                                    <div class="weight-info">
+                                        <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
+                                        <i class="spice"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item" data-img="rise" data-price="30" data-id="1">
+                                <div class="select-img">
+                                    <img src="img/products/pre-11.png">
+                                </div>
+                                <div class="select-title clearfix">
+                                        Лапша Лоу Мэйн
+                                    <div class="weight-info"><span class="price"><span class="price-num">220</span> р.</span><span>220 гр</span><i class="spice"></i></div>
+                                </div>
+                                <div class="hidden info-toselect">
+                                    <div class="select-info">
+                                         Традиционный жареный рис с овощами и соусами на ваш выбор. Вам предоставляется полная свобода в выборе ингредиентов – мы убеждены, что любое сочетание не оставит вас равнодушным.
+                                    </div>
+                                    <div class="weight-info">
+                                        <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
+                                        <i class="spice"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item" data-img="sample" data-price="30" data-id="1">
+                                <div class="select-img">
+                                    <img src="img/products/pre-12.png">
+                                </div>
+                                <div class="select-title clearfix">
+                                        Лапша Удон
+                                    <div class="weight-info"><span class="price"><span class="price-num">220</span> р.</span><span>220 гр</span><i class="spice"></i></div>
+                                </div>
+                                <div class="hidden info-toselect">
+                                    <div class="select-info">
+                                         Традиционный жареный рис с овощами и соусами на ваш выбор. Вам предоставляется полная свобода в выборе ингредиентов – мы убеждены, что любое сочетание не оставит вас равнодушным.
                                     </div>
                                     <div class="weight-info">
                                         <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
@@ -270,66 +345,18 @@
                         </div>
                     </div>
                     <div class="product-info">
-                        <div class="select-info">
-                            Маринованные кусочки белого куриного мяса, обжаренные в Wok'е с в меру острым апельсиновым соусом.
-    Курица Генерала Тсо:  Кусочки темного куриного мяса, обжаренные в Wok'е со сладковатым соевым соусом.
-                        </div>
-                        <div class="weight-info">
-                            <span class="price">220 р.</span><span>220 гр</span><span>220 кк</span>
-                            <i class="spice"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="select-block select-main">
-                    <a href="#" class="select-arrow arrow-top"></a>
-                    <div class="prd-window">
-                        <div class="prd-inside">
-                            <div class="product-item" data-img="rise" data-id="77">
-                                <div class="select-img">
-                                    <img src="img/products/rise-circle.png">
-                                </div>
-                                <div class="select-title clearfix">
-                                    Рис обжаренный с овощами 1
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
-                                </div>
-                            </div>
-                            <div class="product-item" data-img="rise" data-id="79">
-                                <div class="select-img">
-                                    <img src="img/products/rise-circle.png">
-                                </div>
-                                <div class="select-title clearfix">
-                                    Рис обжаренный с овощами 2
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
-                                </div>
-                            </div>
-                            <div class="product-item" data-img="rise" data-id="78">
-                                <div class="select-img">
-                                    <img src="img/products/rise-circle.png">
-                                </div>
-                                <div class="select-title clearfix">
-                                    Рис обжаренный с овощами 3
-                                    <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><i class="spice"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="select-info clearfix">
-                            Маринованные кусочки белого куриного мяса, обжаренные в Wok'е с 
-                        </div>
-                        <div class="weight-info"><span class="price">220 р.</span><span>220 гр</span><span>220 кк</span></div>
                     </div>
                 </div>
                 <div class="buy-block">
-                    <div class="price">440<span>руб</span></div>
-                    <button class="add-to-cart"><i class="_plus"></i>Добавить в заказ</button>
+                    <div class="price"><span class="price-num"></span><span class="price-m">руб</span></div>
+                    <button class="add-to-cart"><i class="_plus"></i>Добавить в корзину</button>
                     <div class="cart-names">
-                        <a href="#" class="cart-name active" data-id="1"><input type="text" placeholder="Ваше имя" class="cname-input"></a>
+                        <a href="#" class="cart-name active" data-id="1"><input type="text" maxlength="15" placeholder="Ваше имя" class="cname-input"></a>
                         <div class="mobile-switch"><span class="fa fa-shopping-cart"></span></div>
                     </div>
                 </div>
                 <div class="product">
-                    <div class="product-in" style="background-image: url(img/products/rise.png)"></div>
+                    <div class="product-in" ></div>
                 </div>
                 <div class="phone-block">
                     <a href="tel:+78633220220" class="phone">3 - 220 - 220</a>
@@ -484,7 +511,7 @@
                             десерты
                         </div>
                     </div>
-                    <div class="tip tip-2">
+                    <div class="tip tip-6">
                         <div class="tip-cont">
                             Отдельные корзины<br>
                             для каждого клиента<br>
@@ -496,31 +523,45 @@
                             Выберите добавку
                         </div>
                     </div>
-                    <div class="tip tip-4">
+                    <div class="tip tip-2">
                         <div class="tip-cont">
                             Выберите гарнир
                         </div>
                     </div>
                     <div class="tip tip-5">
                         <div class="tip-cont">
-                            Стоимость<br>
-                            вашего блюда
+                            Отравьте блюдо в<br>
+                            корзину
                         </div>
                     </div>
-                    <div class="tip tip-6">
+                    <div class="tip tip-8">
                         <div class="tip-cont">
                             Зоны доставки
                         </div>
                     </div>
-                    <div class="tip tip-7">
+                    <div class="tip tip-4">
                         <div class="tip-cont">
                             Нажмите, чтобы<br>
                             удвоить порцию
                         </div>
                     </div>
+                <!--
                     <div class="tip tip-8">
                         <div class="tip-cont">
                             Выбери за меня
+                        </div>
+                    </div>
+                 -->
+                    <div class="tip tip-7">
+                        <div class="tip-cont">
+                            Нажмите два раза<br>
+                            для добавления в<br>
+                            корзину
+                        </div>
+                    </div>
+                    <div class="tip tip-9">
+                        <div class="tip-cont">
+                            Отправьте заказ
                         </div>
                     </div>
                 </div>
@@ -531,8 +572,9 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="js/main.js"></script>
         <script>
-            SelBox.init(true);Pop.show('tips');
+            SelBox.init(true);
         </script>
+        <script src="picturefill.min.js" async></script>
 
     </body>
 </html>
