@@ -4,6 +4,14 @@
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 /* CLASSES */
 /* Wobble Vertical */
 @-webkit-keyframes wobble-vertical {
@@ -266,6 +274,25 @@
   animation: rotating 1s infinite;
   -webkit-animation: rotating 1s infinite;
 }
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix:before {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
 @font-face {
   font-family: 'din_alternatebold';
   src: url('../fonts/pfdintextcomppro-thin-webfont.eot');
@@ -486,16 +513,18 @@ aside .footer-links li a:hover {
 }
 aside .footer-links .visa {
   display: block;
-  width: 34px;
-  height: 22px;
-  background: url(../img/sprites.png) no-repeat 0 -250px;
+  width: 37px;
+  height: 23px;
+  background: url(../img/main/visa_svg.svg) no-repeat center center / 90% #fcfcfc;
+  border-radius: 3px;
 }
 aside .footer-links .mcard {
   display: block;
   width: 37px;
   height: 23px;
   margin: 0 .6rem 0 0;
-  background: url(../img/sprites.png) no-repeat -100px -250px;
+  background: url(../img/main/mastercard_svg.svg) no-repeat center center / 90% #4789b4;
+  border-radius: 3px;
 }
 .logo {
   display: block;
@@ -518,15 +547,16 @@ aside .footer-links .mcard {
   width: 3.125rem;
   height: 3.125rem;
   margin: 0 1.9rem 0 0;
+  outline: none;
 }
 .prod-type .prod-item.food {
-  background: url(../img/sprites.png) no-repeat 2.9% 0 / 560% 570%;
+  background: url(../img/main/food.svg) no-repeat 75% bottom / auto 90%;
 }
 .prod-type .prod-item.desert {
-  background: url(../img/sprites.png) no-repeat 50.8% 0 / 560% 570%;
+  background: url(../img/main/desert.svg) no-repeat center bottom / auto 90%;
 }
 .prod-type .prod-item.drinks {
-  background: url(../img/sprites.png) no-repeat 97.5% 0 / 560% 570%;
+  background: url(../img/main/drink.svg) no-repeat 75% bottom / auto 90%;
 }
 .prod-type .prod-item.drinks a span {
   margin-left: -0.3125rem;
@@ -604,6 +634,65 @@ aside .footer-links .mcard {
 .cart-win {
   position: relative;
   overflow: hidden;
+  margin: 1.8125rem 0 2rem;
+}
+.cart-win:after {
+  content: "";
+  position: absolute;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+  /* IE6-9 */
+  width: 100%;
+  bottom: 0;
+  opacity: 0;
+  height: 0.0625rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  z-index: 5;
+}
+.cart-win:before {
+  content: "";
+  position: absolute;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.65)), color-stop(100%, rgba(0, 0, 0, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+  /* IE6-9 */
+  width: 100%;
+  top: 0;
+  opacity: 0;
+  height: 0.0625rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  z-index: 5;
+}
+.cart-win.big-sized:after {
+  opacity: 1;
+  height: 1.25rem;
+}
+.cart-win.top-sized:before {
+  opacity: 1;
+  height: 1.25rem;
 }
 .orders-win {
   -webkit-transition: all 0.5s ease;
@@ -614,13 +703,12 @@ aside .footer-links .mcard {
   position: relative;
   height: 25.7rem;
   overflow: auto;
-  margin: 1.8125rem 0 2rem;
   width: 110%;
   padding-right: 15%;
 }
 .ord-scroll {
-  -webkit-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   position: absolute;
   top: 1.5625rem;
   right: 0;
@@ -731,7 +819,7 @@ aside .footer-links .mcard {
   border-color: #ff7a22;
 }
 .orders-ul .orders-price {
-  margin: 0 0 2rem 3rem;
+  margin: 0 0 2rem 2.6rem;
   line-height: 1.75em;
   color: #fff;
   font-size: 1.125em;
@@ -745,8 +833,12 @@ aside .footer-links .mcard {
   padding: 0 0 0 0.9375rem;
 }
 .orders-ul .order-prods dt {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
   display: inline-block;
+  width: 100%;
   margin: 0 0.5rem 0.5rem 0;
   padding: 0 3.75rem 0 0;
   font-size: 0.78125em;
@@ -763,7 +855,7 @@ aside .footer-links .mcard {
   display: inline-block;
   position: absolute;
   top: 0;
-  right: 2rem;
+  right: 2.5rem;
   width: 20px;
   height: 20px;
   border-radius: 10px;
@@ -782,7 +874,7 @@ aside .footer-links .mcard {
 .orders-ul .order-prods .prods-cross {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 0.625rem;
   width: 22px;
   height: 19px;
   background: url(../img/cross.svg) no-repeat center center;
@@ -818,8 +910,11 @@ aside .footer-links .mcard {
 .map-wrapper {
   background: #aaa;
 }
-input {
+input,
+textarea {
   outline: none !important;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 main {
   -webkit-transition: all 0.5s ease;
@@ -829,7 +924,11 @@ main {
   right: 0;
   min-height: 100%;
 }
-.actions-wrapper main .season {
+.no-transition {
+  -webkit-transition: none   !important;
+  transition: none   !important;
+}
+.season {
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
   position: absolute;
@@ -843,9 +942,15 @@ main {
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   opacity: 0;
+  z-index: 5;
 }
-.actions-wrapper main .season.active {
+.season.active {
   opacity: 1;
+}
+.map-wrapper .season {
+  color: #000;
+  border-color: #000;
+  top: 1.4375rem;
 }
 .actions-wrapper main .actions-desc {
   position: absolute;
@@ -958,7 +1063,7 @@ main {
   width: 1.875rem;
   height: 2.1875rem;
   top: -0.125rem;
-  background: url(../img/main/autoselect.png) no-repeat center center / 100% 100%;
+  background: url(../img/main/autoselect.svg) no-repeat center center / 100% 100%;
   vertical-align: middle;
   left: 5px;
   -webkit-transition: all 0.5s ease;
@@ -993,21 +1098,26 @@ main {
   outline: none;
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
   position: relative;
   display: inline-block;
   width: 2.875rem;
   height: 3.375rem;
   top: -0.125rem;
-  background: url(../img/main/doublep.png) no-repeat center center / 100% auto;
+  background: url(../img/main/doublep.svg) no-repeat center center / 100% auto;
   vertical-align: middle;
   top: 0.15625rem;
   left: 0.3125rem;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .double-port .doublep-icon:hover {
   opacity: 0.75;
 }
 .double-port .doublep-icon.active {
-  background: url(../img/main/doublep-active.png) no-repeat center center / 100% auto;
+  background: url(../img/main/doublep-active.svg) no-repeat center center / 100% auto;
 }
 .social {
   position: absolute;
@@ -1126,7 +1236,7 @@ main {
   width: 2.1875rem;
   height: 100%;
   margin-right: .5em;
-  background: url(../img/main/cartname.png) no-repeat right 0.5rem;
+  background: url(../img/main/cartname.svg) no-repeat right 0.5rem;
 }
 .buy-block .cart-name .cname-input {
   border: 0;
@@ -1162,7 +1272,7 @@ main {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   width: 20.3125rem;
-  left: 15%;
+  left: 7%;
   overflow: hidden;
   -webkit-backface-visibility: hidden;
 }
@@ -1177,9 +1287,17 @@ main {
 }
 .select-block.select-drink {
   padding: 0 !important;
-}
-.select-block.select-drink .select-title .weight-info {
-  opacity: 1;
+  /*.prd-window {
+			height: auto;
+		}
+
+		.product-item.active {
+			background: rgba(255, 255, 255, .2);
+		}
+
+		.select-title .weight-info {
+			opacity: 1;
+		}*/
 }
 .select-block.select-add {
   top: 0;
@@ -1192,7 +1310,7 @@ main {
 }
 .select-block.opened .select-title {
   font-size: 0.95rem;
-  width: 11.65rem;
+  width: 10.3125rem;
 }
 .select-block.select-main {
   bottom: 0;
@@ -1300,7 +1418,7 @@ main {
   display: inline-block;
   width: 0.875rem;
   height: 1.0625rem;
-  background: url(../img/main/chili.png) no-repeat 0 0 / 100% 100%;
+  background: url(../img/main/pepper.svg) no-repeat 0 0 / 100% 100%;
   top: .2em;
 }
 .select-arrow {
@@ -1329,6 +1447,15 @@ main {
   transform: rotate(180deg);
   -webkit-backface-visibility: hidden;
 }
+.order-li-cross {
+  background: url("../img/cross-active.svg") no-repeat scroll center center / 100% 100% rgba(0, 0, 0, 0);
+  height: 19px;
+  position: absolute;
+  right: 9px;
+  top: -8px;
+  width: 23px;
+  z-index: 3;
+}
 .phone-block {
   position: absolute;
   right: 1.875rem;
@@ -1337,10 +1464,24 @@ main {
   font-size: 1.375rem;
   z-index: 4;
 }
+.phone-block.phb-map .phone:before {
+  background-image: url(../img/main/phone-black.svg);
+}
 .phone-block .phone {
+  position: relative;
   color: #fff;
   text-decoration: none;
   margin-right: 0.9375rem;
+}
+.phone-block .phone:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2.5rem;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background: url("../img/main/phone.svg") no-repeat scroll center center / 20px auto rgba(0, 0, 0, 0);
 }
 .phone-block .phone-icons {
   vertical-align: middle;
@@ -1354,6 +1495,7 @@ main {
   height: 1.1em;
   margin-left: 0.9375rem;
   width: 1.375rem;
+  outline: none;
 }
 .phone-block .ph-map:hover,
 .phone-block .ph-wok:hover,
@@ -1361,22 +1503,22 @@ main {
   opacity: 0.75;
 }
 .phone-block .ph-map {
-  background: url(../img/main/map-mark.png) no-repeat center center / auto 100%;
+  background: url(../img/main/map.svg) no-repeat center center / auto 95%;
 }
 .phone-block .ph-wok {
-  background: url(../img/main/wok.png) no-repeat center center / 100% auto;
+  background: url(../img/main/w.svg) no-repeat center center / 95% auto;
 }
 .phone-block .ph-star {
-  background: url(../img/main/star.png) no-repeat center center / 100% auto;
+  background: url(../img/main/star.svg) no-repeat center center / 95% auto;
 }
 .phone-block.phb-map .ph-map {
-  background: url(../img/main/map-mark-black.png) no-repeat center center / auto 100%;
+  background: url(../img/main/map-black.svg) no-repeat center center / auto 95%;
 }
 .phone-block.phb-map .ph-wok {
-  background: url(../img/main/wok-black.png) no-repeat center center / 100% auto;
+  background: url(../img/main/w-black.svg) no-repeat center center / 95% auto;
 }
 .phone-block.phb-map .ph-star {
-  background: url(../img/main/star-black.png) no-repeat center center / 100% auto;
+  background: url(../img/main/star-black.svg) no-repeat center center / 95% auto;
 }
 .phone-block.phb-map .phone {
   color: #000;
@@ -1651,6 +1793,7 @@ main {
   padding: 0 1.25rem;
   color: #fff;
   text-decoration: none;
+  overflow: hidden;
 }
 .overlay .ord-title .ord-tit-block.active {
   background: #fff;
@@ -1812,6 +1955,9 @@ main {
 .overlay .text-error {
   color: #b12125;
 }
+.overlay .offer-link {
+  color: #fff;
+}
 .overlay .sms-pass {
   color: #fff;
   font-style: italic;
@@ -1871,26 +2017,26 @@ main {
 .checkbox.checked:before {
   content: "";
   position: absolute;
-  width: 0.625rem;
+  width: 100%;
+  height: 2px;
   top: 50%;
-  margin-top: -0.0625rem;
-  height: 0.125rem;
+  margin-top: -1px;
+  background: #fff;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  background: #fff;
 }
 .checkbox.checked:after {
   content: "";
   position: absolute;
-  width: 0.625rem;
+  width: 100%;
+  height: 2px;
   top: 50%;
-  margin-top: -0.0625rem;
-  height: 0.125rem;
+  margin-top: -1px;
+  background: #fff;
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  background: #fff;
 }
 .ord-pay .pay-row {
   position: relative;
@@ -1951,12 +2097,11 @@ main {
   width: 3.125rem;
   color: #fff;
   font-weight: 300;
-  height: 0.8125rem;
   margin-right: 0.3125rem;
   font-family: 'Open Sans', sans-serif;
 }
 .ord-pay .pay-info {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-style: italic;
   color: #ccc;
 }
@@ -2293,23 +2438,27 @@ input.js-radio {
     width: 100%;
   }
 }
+@media screen and (min-height: 0) and (max-height: 767px) {
+  body {
+    position: relative;
+    height: 38.75rem;
+  }
+}
 @media screen and (min-height: 250px) and (max-height: 767px) {
   html {
     font-size: 15.5px;
   }
-  body {
-    position: relative;
-    height: 40rem;
-  }
   h1 {
     margin: .67rem 0 .37rem;
   }
-  .orders-win {
-    height: 14rem;
+  .cart-win {
     margin: 1.8125rem 0 .8rem;
   }
+  .orders-win {
+    height: 14rem;
+  }
   .orders-total {
-    margin: 0 0 1.4rem 1.8rem;
+    margin: 0 0 0.4375rem 1.8rem;
   }
   aside .footer-links {
     position: absolute;
@@ -2371,6 +2520,9 @@ input.js-radio {
   }
 }
 @media screen and (max-width: 640px) {
+  .map-wrapper .season {
+    top: 14.6875rem;
+  }
   .ur-order {
     display: block;
   }
@@ -2432,7 +2584,7 @@ input.js-radio {
     opacity: 0;
   }
   .mobile-ordername.orders-active {
-    top: -31%;
+    top: -48%;
     opacity: 1;
   }
   h1 {
@@ -2531,10 +2683,10 @@ input.js-radio {
   }
   aside .cart-win {
     overflow: visible;
+    margin: 6.813rem 0 0.8rem;
   }
   aside .orders-win {
     height: 22rem;
-    margin: 6.813rem 0 0.8rem;
     padding: 2rem 0 0 0;
     font-size: 1.3em;
     width: 100%;
@@ -2563,6 +2715,15 @@ input.js-radio {
     width: 100%;
     margin: 0;
     text-align: center;
+  }
+  aside .orders-ul .order-prods dt {
+    padding: 0 4.85rem 0 0;
+  }
+  aside .orders-ul .order-prods .xl-port {
+    margin: 0 0.5rem;
+  }
+  aside .orders-ul .order-prods .prods-cross {
+    background: url("../img/cross.svg") no-repeat scroll 0 center / 100% 100% rgba(0, 0, 0, 0);
   }
   aside .add-to-cart {
     display: none;
@@ -2641,7 +2802,7 @@ input.js-radio {
     display: none;
   }
   .select-block.select-main {
-    bottom: 11rem;
+    bottom: 8rem;
     background: none;
   }
   .select-block.select-main .select-arrow {
@@ -2712,7 +2873,79 @@ input.js-radio {
     width: 100%;
     max-height: auto;
     z-index: 999;
-    background: #000000;
+    background: rgba(0, 0, 0, 0.85);
+  }
+}
+@media screen and (max-width: 600px) {
+  .overlay .inp-div:not(.code-elem) {
+    width: 100% !important;
+    margin-left: 0;
+  }
+  .overlay .inp-div {
+    margin-bottom: 15px;
+    height: 25px;
+  }
+  .p_order.faded {
+    height: 650px;
+  }
+  .overlay .inp-row.textarea .inp-div {
+    height: 75px;
+  }
+  .overlay .inp-row:first-child {
+    margin-top: 25px;
+  }
+  .overlay .agree,
+  .p_order .sms-pass {
+    font-size: 12px !important;
+  }
+  .overlay .ord-next {
+    font-size: 15px;
+    height: 50px;
+  }
+  .inp-row {
+    height: auto !important;
+    margin-bottom: 0 !important;
+    *zoom: 1;
+  }
+  .inp-row:before {
+    content: " ";
+    display: table;
+  }
+  .inp-row:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+  .phone-block .ph-map,
+  .phone-block .ph-wok,
+  .phone-block .ph-star {
+    width: 2rem;
+    height: 2.5rem;
+  }
+  .pay-title {
+    font-size: 1.25rem !important;
+  }
+  .pay-info {
+    font-size: 1rem !important;
+  }
+  .inp-place {
+    height: 35px;
+    line-height: 35px;
+  }
+  input.order-inp {
+    height: 35px !important;
+  }
+  .p_order .ord-block {
+    position: absolute;
+    top: 0;
+    width: 100% !important;
+    border: 0 none;
+    font-size: 1.3em !important;
+  }
+  .overlay .ord-body {
+    border-bottom: 0 none;
+    border-left: 0 none;
+    border-right: 0 none;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2754,6 +2987,15 @@ input.js-radio {
   }
   aside .orders-win {
     height: 34rem;
+  }
+  .mobile-ordername.orders-active {
+    top: -31%;
+  }
+  aside .orders-ul .order-prods dt {
+    padding: 0 5.75rem 0 0;
+  }
+  aside .orders-ul .order-prods .xl-port {
+    margin: 0 1rem 0 0;
   }
 }
 @media screen and (max-width: 320px) {

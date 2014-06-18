@@ -60,16 +60,18 @@ aside {
 		}
 		.visa {
 			display: block;
-			width: 34px;
-			height: 22px;
-			background: url(../img/sprites.png) no-repeat 0 -250px;
+			width: 37px;
+			height: 23px;
+			background: url(../img/main/visa_svg.svg) no-repeat center center e('/') 90% #fcfcfc;
+			border-radius: 3px;
 		}
 		.mcard {
 			display: block;
 			width: 37px;
 			height: 23px;
 			margin: 0 .6rem 0 0;
-			background: url(../img/sprites.png) no-repeat -100px -250px;
+			background: url(../img/main/mastercard_svg.svg) no-repeat center center e('/') 90% #4789b4;
+			border-radius: 3px;
 		}
 	}
 }
@@ -95,17 +97,18 @@ aside {
 		width: 50rem / @htmlFontSize;
 		height: 50rem / @htmlFontSize;
 		margin: 0 1.9rem 0 0;
+		outline: none;
 
 		&.food {
-			background: url(../img/sprites.png) no-repeat 2.9% 0 e('/') 560% 570%;
+			background: url(../img/main/food.svg) no-repeat 75% bottom e('/') auto 90%;
 		}
 
 		&.desert {
-			background: url(../img/sprites.png) no-repeat 50.8% 0 e('/') 560% 570%;
+			background: url(../img/main/desert.svg) no-repeat center bottom e('/') auto 90%;
 		}
 
 		&.drinks {
-			background: url(../img/sprites.png) no-repeat 97.5% 0 e('/') 560% 570%;
+			background: url(../img/main/drink.svg) no-repeat 75% bottom e('/') auto 90%;
 
 			a span {
 				margin-left: -5rem / @htmlFontSize;
@@ -195,6 +198,58 @@ aside {
 .cart-win {
 	position: relative;
 	overflow: hidden;
+	margin: 29rem / @htmlFontSize 0 2rem;
+
+	&:after {
+		content: "";
+		position: absolute;
+		background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+		width: 100%;
+		bottom: 0;
+		opacity: 0;
+		height: 1rem / @htmlFontSize;
+		.transition;
+		z-index: 5;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+		width: 100%;
+		top: 0;
+		opacity: 0;
+		height: 1rem / @htmlFontSize;
+		.transition;
+		z-index: 5;
+	}
+
+
+	&.big-sized {
+		&:after {
+			opacity: 1;
+			height: 20rem / @htmlFontSize;
+		}
+	}
+
+	&.top-sized {
+		&:before {
+			opacity: 1;
+			height: 20rem / @htmlFontSize;
+		}
+	}
 }
 
 .orders-win {
@@ -203,13 +258,12 @@ aside {
 	position: relative;
 	height: 25.7rem;
 	overflow: auto;
-	margin: 29rem / @htmlFontSize 0 2rem;
 	width: 110%;
 	padding-right: 15%;
 }
 
 .ord-scroll {
-	.transition(opacity);
+	.transition;
 	position: absolute;
 	top: 25rem / @htmlFontSize;
 	right: 0;
@@ -330,7 +384,7 @@ aside {
 	}
 
 	.orders-price {
-		margin: 0 0 2rem 3rem;
+		margin: 0 0 2rem 2.6rem;
 		line-height: 1.75em;
 		color: #fff;
 		font-size: 18em / @htmlFontSize;
@@ -346,8 +400,10 @@ aside {
 		padding: 0 0 0 15rem / @htmlFontSize;
 
 		dt {
+			.box-sizing;
 			position: relative;
 			display: inline-block;
+			width: 100%;
 			margin: 0 .5rem 8rem / @htmlFontSize 0;
 			padding: 0 60rem / @htmlFontSize 0 0;
 			font-size: 12.5em / @htmlFontSize;
@@ -365,7 +421,7 @@ aside {
 			display: inline-block;
 			position: absolute;
 			top: 0;
-			right: 32rem / @htmlFontSize;
+			right: 40rem / @htmlFontSize;
 			width: 20px;
 			height: 20px;
 			border-radius: 10px;
@@ -385,7 +441,7 @@ aside {
 		.prods-cross {
 			position: absolute;
 			top: 0;
-			right: 0;
+			right: 10rem / @htmlFontSize;
 			width: 22px;
 			height: 19px;
 			background: url(../img/cross.svg) no-repeat center center;

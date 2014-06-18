@@ -42,7 +42,7 @@
                  --><div class="prod-select-part part-3"></div>
                 </div>
                 <div class="cart-win">
-                    <div class="mobile-ordername">Ваш заказ: <span>2000 руб</span></div>
+                    <div class="mobile-ordername">Ваш заказ: <span class="mob-price">0</span> руб</div>
                     <div class="ord-scroll"></div>
                     <div class="orders-win">
                         <dl class="orders-ul">
@@ -97,7 +97,7 @@
             </aside>
             <main>
                 <div class="select-block select-add select-drink">
-                    <a href="#" class="select-arrow"></a>
+                    <a href="#" class="select-arrow arrow-down"></a>
                     <div class="prd-window">
                         <div class="prd-inside">
                             <div class="product-item" data-img="cocacola_big" data-id="1">
@@ -105,7 +105,7 @@
                                     <img src="img/products/cocacola.png">
                                 </div>
                                 <div class="select-title clearfix">
-                                    Coca Cola
+                                    <span class="item-name">Coca Cola</span>
                                     <div class="weight-info"><span class="price"><span class="price-num">220</span> р.</span><span>220 гр</span><i class="spice"></i></div>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                                     <img src="img/products/cocacola.png">
                                 </div>
                                 <div class="select-title clearfix">
-                                    Sprite
+                                    <span class="item-name">Sprite</span>
                                     <div class="weight-info"><span class="price"><span class="price-num">620</span> р.</span><span>220 гр</span><i class="spice"></i></div>
                                 </div>
                             </div>
@@ -284,7 +284,7 @@
                             десерты
                         </div>
                     </div>
-                    <div class="tip tip-2">
+                    <div class="tip tip-6">
                         <div class="tip-cont">
                             Отдельные корзины<br>
                             для каждого клиента<br>
@@ -296,31 +296,45 @@
                             Выберите добавку
                         </div>
                     </div>
-                    <div class="tip tip-4">
+                    <div class="tip tip-2">
                         <div class="tip-cont">
                             Выберите гарнир
                         </div>
                     </div>
                     <div class="tip tip-5">
                         <div class="tip-cont">
-                            Стоимость<br>
-                            вашего блюда
+                            Отравьте блюдо в<br>
+                            корзину
                         </div>
                     </div>
-                    <div class="tip tip-6">
+                    <div class="tip tip-8">
                         <div class="tip-cont">
                             Зоны доставки
                         </div>
                     </div>
-                    <div class="tip tip-7">
+                    <div class="tip tip-4">
                         <div class="tip-cont">
                             Нажмите, чтобы<br>
                             удвоить порцию
                         </div>
                     </div>
+                <!--
                     <div class="tip tip-8">
                         <div class="tip-cont">
                             Выбери за меня
+                        </div>
+                    </div>
+                 -->
+                    <div class="tip tip-7">
+                        <div class="tip-cont">
+                            Нажмите два раза<br>
+                            для добавления в<br>
+                            корзину
+                        </div>
+                    </div>
+                    <div class="tip tip-9">
+                        <div class="tip-cont">
+                            Отправьте заказ
                         </div>
                     </div>
                 </div>
@@ -329,10 +343,10 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/vendor/jquery.mask.min.js"></script>
         <script src="js/main.js"></script>
         <script>
             SelBox.init(false);
-            drInit();
         </script>
 
     </body>

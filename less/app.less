@@ -16,8 +16,10 @@
 .map-wrapper {
 	background: #aaa;
 }
-input {
+input, textarea {
 	outline: none !important;
+	.openSans;
+	font-weight: 300;
 }
 main {
 	.transition;
@@ -26,26 +28,35 @@ main {
 	right: 0;
 	min-height: 100%;
 }
-.actions-wrapper main {
-	.season {
-		.transition(opacity);
-		position: absolute;
-		top: 86rem / @htmlFontSize;
-		left: 14rem / @htmlFontSize;
-		padding: 0 12rem / @htmlFontSize;
-		border: 2px solid #fff;
-		color: #fff;
+.no-transition {
+	.transition(none, e(' '), e('!important'));
+}
+.season {
+	.transition(opacity);
+	position: absolute;
+	top: 86rem / @htmlFontSize;
+	left: 14rem / @htmlFontSize;
+	padding: 0 12rem / @htmlFontSize;
+	border: 2px solid #fff;
+	color: #fff;
 
-		line-height: 1.2em;
-		font-size: 29em / @htmlFontSize;
-		font-family: 'Open Sans', sans-serif;
-		text-transform: uppercase;
-		opacity: 0;
+	line-height: 1.2em;
+	font-size: 29em / @htmlFontSize;
+	font-family: 'Open Sans', sans-serif;
+	text-transform: uppercase;
+	opacity: 0;
+	z-index: 5;
 
-		&.active {
-			opacity: 1;
-		}
+	&.active {
+		opacity: 1;
 	}
+}
+.map-wrapper .season {
+	color: #000;
+	border-color: #000;
+	top: 23rem / @htmlFontSize;
+}
+.actions-wrapper main {
 	.actions-desc {
 		position: absolute;
 		top: 70%;
@@ -126,7 +137,7 @@ main {
 		width: 30rem / @htmlFontSize;
 		height: 35rem / @htmlFontSize;
 		top: -2rem / @htmlFontSize;
-		background: url(../img/main/autoselect.png) no-repeat center center e('/') 100% 100%;
+		background: url(../img/main/autoselect.svg) no-repeat center center e('/') 100% 100%;
 		vertical-align: middle;
 		left: 5px;
 
@@ -157,22 +168,26 @@ main {
 	.doublep-icon {
 		outline: none;
 		.transition(opacity);
+		.rotate(90deg);
 		position: relative;
 		display: inline-block;
 		width: 46rem / @htmlFontSize;
 		height: 54rem / @htmlFontSize;
 		top: -2rem / @htmlFontSize;
-		background: url(../img/main/doublep.png) no-repeat center center e('/') 100% auto;
+		background: url(../img/main/doublep.svg) no-repeat center center e('/') 100% auto;
 		vertical-align: middle;
 		top: 2.5rem / @htmlFontSize;
 		left: 5rem / @htmlFontSize;
+
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
 
 		&:hover {
 			.opacity;
 		}
 
 		&.active {
-			background: url(../img/main/doublep-active.png) no-repeat center center e('/') 100% auto;
+			background: url(../img/main/doublep-active.svg) no-repeat center center e('/') 100% auto;
 		}
 	}
 }
@@ -276,7 +291,7 @@ main {
 			width: 35rem / @htmlFontSize;
 			height: 100%;
 			margin-right: .5em;
-			background: url(../img/main/cartname.png) no-repeat right .5rem;
+			background: url(../img/main/cartname.svg) no-repeat right .5rem;
 		}
 
 		.cname-input {
@@ -312,7 +327,7 @@ main {
 	background: rgba(0,0,0, .5);
 	color: #fff;
 	width: 325rem / @htmlFontSize;
-	left: 15%;
+	left: 7%;
 	overflow: hidden;
 	-webkit-backface-visibility: hidden;
 
@@ -330,9 +345,17 @@ main {
 	&.select-drink {
 		padding: 0 !important;
 
+		/*.prd-window {
+			height: auto;
+		}
+
+		.product-item.active {
+			background: rgba(255, 255, 255, .2);
+		}
+
 		.select-title .weight-info {
 			opacity: 1;
-		}
+		}*/
 	}
 
 	&.select-add {
@@ -347,7 +370,7 @@ main {
 	&.opened {		
 		.select-title {
 		    font-size: 0.95rem;
-		    width: 11.65rem;
+		    width: 165rem / @htmlFontSize;
 		}
 	}
 
@@ -460,7 +483,7 @@ main {
 	display: inline-block;
 	width: 14rem / @htmlFontSize;
 	height: 17rem / @htmlFontSize;
-	background: url(../img/main/chili.png) no-repeat 0 0 e('/') 100% 100%;
+	background: url(../img/main/pepper.svg) no-repeat 0 0 e('/') 100% 100%;
 	top: .2em;
 }
 
@@ -491,7 +514,15 @@ main {
 		-webkit-backface-visibility: hidden;
 	}
 }
-
+.order-li-cross {
+	background: url("../img/cross-active.svg") no-repeat scroll center center / 100% 100% rgba(0, 0, 0, 0);
+    height: 19px;
+    position: absolute;
+    right: 9px;
+    top: -8px;
+    width: 23px;
+    z-index: 3;
+}
 .phone-block {
 	position: absolute;
 	right: 30rem / @htmlFontSize;
@@ -500,10 +531,30 @@ main {
 	font-size: 22rem / @htmlFontSize;
 	z-index: 4;
 
+	&.phb-map {
+		.phone {
+			&:before {
+				background-image: url(../img/main/phone-black.svg);
+			}
+		}
+	}
+
 	.phone {
+		position: relative;
 		color: #fff;
 		text-decoration: none;
 		margin-right: 15rem / @htmlFontSize;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -2.5rem;
+			display: inline-block;
+			width: 2rem;
+			height: 2rem;
+			background: url("../img/main/phone.svg") no-repeat scroll center center / 20px auto rgba(0, 0, 0, 0);
+		}
 	}
 	
 	.phone-icons {
@@ -516,6 +567,7 @@ main {
 		height: 1.1em;
 		margin-left: 15rem / @htmlFontSize;
 		width: 22rem / @htmlFontSize;
+		outline: none;
 
 		&:hover {
 			.opacity;
@@ -523,24 +575,24 @@ main {
 	}
 
 	.ph-map {
-		background: url(../img/main/map-mark.png) no-repeat center center e('/') auto 100%;
+		background: url(../img/main/map.svg) no-repeat center center e('/') auto 95%;
 	}
 	.ph-wok {
-		background: url(../img/main/wok.png) no-repeat center center e('/') 100% auto;
+		background: url(../img/main/w.svg) no-repeat center center e('/') 95% auto;
 	}
 	.ph-star {
-		background: url(../img/main/star.png) no-repeat center center e('/') 100% auto;
+		background: url(../img/main/star.svg) no-repeat center center e('/') 95% auto;
 	}
 
 	&.phb-map {
 		.ph-map {
-		background: url(../img/main/map-mark-black.png) no-repeat center center e('/') auto 100%;
+		background: url(../img/main/map-black.svg) no-repeat center center e('/') auto 95%;
 		}
 		.ph-wok {
-			background: url(../img/main/wok-black.png) no-repeat center center e('/') 100% auto;
+			background: url(../img/main/w-black.svg) no-repeat center center e('/') 95% auto;
 		}
 		.ph-star {
-			background: url(../img/main/star-black.png) no-repeat center center e('/') 100% auto;
+			background: url(../img/main/star-black.svg) no-repeat center center e('/') 95% auto;
 		}
 		.phone {
 			color: #000;
@@ -855,6 +907,7 @@ main {
 			padding: 0 20rem / @htmlFontSize;
 			color: #fff;
 			text-decoration: none;
+			overflow: hidden;
 
 			&.active {
 				background: #fff;
@@ -1023,6 +1076,10 @@ main {
 		color: #b12125;
 	}
 
+	.offer-link {
+		color: #fff;
+	}
+
 	.sms-pass {
 		color: #fff;
 		font-style: italic;
@@ -1066,22 +1123,23 @@ main {
 		&:before {
 			content: "";
 			position: absolute;
-			width: 10rem / @htmlFontSize;
+			width: 100%;
+			height: 2px;
 			top: 50%;
-			margin-top: -1rem / @htmlFontSize;
-			height: 2rem / @htmlFontSize;
-			.rotate(45deg);
+			margin-top: -1px;
 			background: #fff;
+			.rotate(45deg);
 		}
+
 		&:after {
 			content: "";
 			position: absolute;
-			width: 10rem / @htmlFontSize;
+			width: 100%;
+			height: 2px;
 			top: 50%;
-			margin-top: -1rem / @htmlFontSize;
-			height: 2rem / @htmlFontSize;
-			.rotate(-45deg);
+			margin-top: -1px;
 			background: #fff;
+			.rotate(-45deg);
 		}
 	}
 }
@@ -1156,14 +1214,13 @@ main {
 			width: 50rem / @htmlFontSize;
 			color: #fff;
 			font-weight: 300;
-			height: 13rem / @htmlFontSize;
 			margin-right: 5rem / @htmlFontSize;
 			.openSans;
 		}
 	}
 
 	.pay-info {
-		font-size: 12rem / @htmlFontSize;
+		font-size: 13rem / @htmlFontSize;
 		font-style: italic;
 		color: #ccc; 
 	}

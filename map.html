@@ -96,6 +96,9 @@
                 </div>
             </aside>
             <main>
+                <div class="season active">
+                    Зона доставки
+                </div>
                 <div class="phone-block phb-map">
                     <a href="tel:+78633220220" class="phone">3 - 220 - 220</a>
                     <span class="phone-icons"><a href="#" class="ph-map"></a><a href="#" class="ph-wok"></a><a href="#" class="ph-star"></a></span>
@@ -365,9 +368,17 @@
         ];
 
         function initialize() {
+            if($(window).width() < 1000) {
+                var g_zoom = 13;
+            } else {
+                var g_zoom = 14;
+            }
+            if($(window).height() < 650) {
+                g_zoom = 13;
+            }
           var mapOptions = {
-            zoom: 13,
-            center: new google.maps.LatLng(47.240045, 39.710710),
+            zoom: g_zoom,
+            center: new google.maps.LatLng(47.242418, 39.704511),
             //mapTypeId: google.maps.MapTypeId.TERRAIN
             styles: map_style
           };
@@ -399,6 +410,7 @@
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
+        $(window).on('resize', initialize);
         </script>
 
     </body>

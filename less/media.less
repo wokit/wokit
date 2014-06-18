@@ -28,23 +28,27 @@
 		}
 	}
 }
+@media screen and (min-height: 0) and (max-height: 767px)  {
+	body {
+		position: relative;
+		height: 620rem / @htmlFontSize;
+	}
+}
 @media screen and (min-height: 250px) and (max-height: 767px)  {
 	html {
 		font-size: 15.5px;
 	}
-	body {
-		position: relative;
-		height: 640rem / @htmlFontSize;
-	}
 	h1 {
 	    margin: .67rem 0 .37rem;
 	}
+	.cart-win {
+		margin: 1.8125rem 0 .8rem;
+	}
     .orders-win {
     	height: 14rem;
-    	margin: 1.8125rem 0 .8rem;
     }
     .orders-total {
-    	margin: 0 0 1.4rem 1.8rem;
+    	margin: 0 0 7rem / @htmlFontSize 1.8rem;
     }
     aside {
     	.footer-links {
@@ -123,6 +127,9 @@
 }
 //Mobile version
 @media screen and (max-width: 640px) {
+	.map-wrapper .season {
+		top: 235rem / @htmlFontSize;
+	}
 	.ur-order {
 		display: block;
 	}
@@ -188,7 +195,7 @@
 	    opacity: 0;
 
 	    &.orders-active {
-	    	top: -31%;
+	    	top: -48%;
 	    	opacity: 1;
 	    }
 	}
@@ -296,10 +303,10 @@
 		}
 		.cart-win {
 			overflow: visible;
+			margin: 6.813rem 0 0.8rem;
 		}
 		.orders-win {
 		    height: 22rem;
-		    margin: 6.813rem 0 0.8rem;
 		    padding: 2rem 0 0 0;
 		    font-size: 1.3em;
 		    width: 100%;
@@ -333,6 +340,15 @@
 			width: 100%;
 			margin: 0;
 			text-align: center;
+		}
+		.orders-ul .order-prods dt {
+		    padding: 0 4.85rem 0 0;
+		}
+		.orders-ul .order-prods .xl-port {
+		    margin: 0 0.5rem;
+		}
+		.orders-ul .order-prods .prods-cross {
+		    background: url("../img/cross.svg") no-repeat scroll 0 center e('/') 100% 100% rgba(0, 0, 0, 0);
 		}
 		.add-to-cart {
 			display: none;
@@ -420,7 +436,7 @@
 			}
 		}
 		&.select-main {
-			bottom: 11rem;
+			bottom: 8rem;
 			background: none;
 
 			.select-arrow {
@@ -503,7 +519,68 @@
 		width: 100%;
 		max-height: auto;
 		z-index: 999;
-		background: rgb(0, 0, 0);
+		background: rgba(0, 0, 0, .85);
+	}
+}
+@media screen and (max-width: 600px) {
+	.overlay .inp-div:not(.code-elem) {
+		width: 100% !important;
+		margin-left: 0;
+	}
+	.overlay .inp-div {
+		margin-bottom: 15px;
+		height: 25px;
+	}
+	.p_order.faded {
+		height: 650px;
+	}
+	.overlay .inp-row.textarea .inp-div {
+		height: 75px;
+	}
+	.overlay .inp-row:first-child {
+		margin-top: 25px;
+	}
+	.overlay .agree, .p_order .sms-pass {
+		font-size: 12px !important;
+	}
+	.overlay .ord-next {
+		font-size: 15px;
+		height: 50px;
+	}
+	.inp-row {
+		height: auto !important;
+		margin-bottom: 0 !important;
+
+		.clearfix;
+	}
+	.phone-block .ph-map, .phone-block .ph-wok, .phone-block .ph-star {
+		width: 2rem;
+		height: 2.5rem;
+	}
+	.pay-title {
+		font-size: 1.25rem !important;
+	}
+	.pay-info {
+		font-size: 1rem !important;
+	}
+	.inp-place {
+		height: 35px;
+		line-height: 35px;
+	}
+	input.order-inp {
+		height: 35px !important;
+	}
+	.p_order .ord-block {
+		position: absolute;
+		top: 0;
+		width: 100% !important;
+		border: 0 none;
+		font-size: 1.3em !important;
+	}
+	.overlay .ord-body {
+		border-bottom: 0 none;
+		border-left: 0 none;
+		border-right: 0 none;
 	}
 }
 @media screen and (max-width: 480px) {
@@ -553,6 +630,17 @@
 	}
 	aside .orders-win {
 		height: 34rem;
+	}	
+	.mobile-ordername {
+	    &.orders-active {
+	    	top: -31%;
+	    }
+	}
+	aside .orders-ul .order-prods dt {
+	    padding: 0 5.75rem 0 0;
+	}
+	aside .orders-ul .order-prods .xl-port {
+	    margin: 0 1rem 0 0;
 	}
 }
 @media screen and (max-width: 320px) {

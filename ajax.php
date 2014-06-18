@@ -4,16 +4,24 @@
 switch ($_GET['act']) {
 	
 	case 'item_delete':
+		/*
+			cart_price - итого корзины из которой удаляют товар
+			final_price - общая сумма всех корзин
+		*/
 		echo 	'{ 
-				"price": 300,
+				"cart_price": 300,
 				"final_price": 300
 				}';
 		break;
 	
 	case 'item_add':
+		/*
+			cart_price - итого корзины в которую добавляют товар
+			product_price - стоимость товара добавляемого в корзину
+			final_price - общая сумма всех корзин
+		*/
 		echo 	'{ 
-				"price": 800,
-				"product": "Вермешель",
+				"cart_price": 800,
 				"product_price": 200,
 				"final_price": 900
 				}';
@@ -21,18 +29,15 @@ switch ($_GET['act']) {
 
 
 	case 'cart_delete':
+		/*
+			final_price - общая сумма всех корзин
+		*/
 		echo 	'{ 
-				"price": 300,
 				"final_price": 300
 				}';
 		break;
 	
 	case 'cart_add':
-		echo 	'{ 
-				"price": 800,
-				"product": "Вермешель",
-				"product_price": 200,
-				"final_price": 900
-				}';
+		echo 	'{}';
 		break;
 }
