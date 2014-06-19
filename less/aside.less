@@ -23,6 +23,12 @@ aside {
 	    padding-right: 10rem / @htmlFontSize;
 	}
 
+	.aside-bottom {
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+	}
+
 	.add-to-cart {
 		.btn(10.3125rem);
 		margin: 0 auto .8rem;
@@ -39,7 +45,7 @@ aside {
 	}
 	.footer-links {
 		.list-unstyled;
-		margin: 63rem / @htmlFontSize 0 0;
+		margin: 10rem / @htmlFontSize 0 15rem / @htmlFontSize;
 		text-align: center;
 		font-size: 22px;
 
@@ -430,7 +436,7 @@ aside {
 			display: inline-block;
 			width: 100%;
 			margin: 0 .5rem 8rem / @htmlFontSize 0;
-			padding: 0 4rem 0 0;
+			padding: 0 4.5rem 0 0;
 			font-size: 12.5em / @htmlFontSize;
 		}
 		dd {
@@ -445,9 +451,9 @@ aside {
 		.xl-port {
 			display: inline-block;
 			position: absolute;
-			right: 2.4rem;
-			width: 20px;
-			height: 20px;
+			right: 2.8rem;
+			width: 19px;
+			height: 19px;
 			border-radius: 100%;
 			text-align: center;
 			background: #fff;
@@ -461,7 +467,7 @@ aside {
 				.robotoSlab;
 				font-style: normal;
 				font-size: 9px;
-				line-height: 20px;
+				line-height: 19px;
 			}
 		}
 		.prods-cross {
@@ -482,11 +488,12 @@ aside {
 }
 
 .orders-total {
-	margin: 0 0 2rem 1.8rem;
 	color: #fff;
 	font-size: 31em / @htmlFontSize;
 	font-weight: 400;
 	font-family: 'din_alternatebold',sans-serif;
+	text-align: center;
+	margin-bottom: 7rem / @htmlFontSize;
 
 	strong {
 		font-weight: 500;

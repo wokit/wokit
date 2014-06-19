@@ -70,6 +70,7 @@ var xlBreak = function() {
 }
 
 $(function(){
+
 	$(document).on('change', '.js-check', function(){
 		var id = $(this).attr('id');
 		var fake = $('label[for=' + id + ']').find('i.js-check');
@@ -784,10 +785,12 @@ var cartHeight = (function(){
 			return;
 		}
 		var topSlice = $('.prod-select').position().top + $('.prod-select').outerHeight(true);
-		var height = $('aside').height() - topSlice - $('.aside-bottom').outerHeight(true) - $('.footer-links').outerHeight(true) - 10;
-		if($(window).height() > 768) {
+		var height = $('aside').height() - topSlice - $('.aside-bottom').outerHeight(true) - $('.footer-links').outerHeight(true);
+		/*
+		/*if($(window).height() > 768) {
 			height = height - $('.orders-total').outerHeight(true);
-		}
+		}*/
+		//var height = $('aside').height() - $('.aside-bottom').outerHeight(true) - topSlice;
 		$('.orders-win').css('height', height);
 	}
 
