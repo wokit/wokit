@@ -9,23 +9,23 @@ aside {
 	z-index: 5;
 
 	.mobile-switch {
-		background: none repeat scroll 0 0 #313131;
-	    bottom: 1.05rem;
-	    color: #FFFFFF;
-	    cursor: pointer;
+		.btn(10.3125rem, #5dc1af);
 	    display: none;
-	    font-size: 2em;
-	    height: 3rem;
-	    line-height: 2.7rem;
-	    padding: 0 0.4em 0 1rem;
 	    position: absolute;
 	    right: 0.7em;
+	    top: 15rem / @htmlFontSize;
 	    z-index: 1;
+	    width: auto;
+	    height: 3.188rem;
+	    line-height: 2.75rem;
+	    font-size: 1em;
+	    padding-left: 10rem / @htmlFontSize;
+	    padding-right: 10rem / @htmlFontSize;
 	}
 
 	.add-to-cart {
 		.btn(10.3125rem);
-		margin: 0 auto 1rem;
+		margin: 0 auto .8rem;
 		line-height: 1.363rem;
 	}
 	.make-order {
@@ -82,7 +82,8 @@ aside {
 	height: 60rem / @htmlFontSize;
 	//margin: 64rem / @htmlFontSize auto 40rem / @htmlFontSize;
 	margin: 0 auto;
-	background: url(../img/main/logo.png) no-repeat center center e('/') 100% auto;
+	background: url(../img/main/logo.svg) no-repeat center center e('/') 200% auto;
+	//background: url(../img/main/logo.png) no-repeat center center e('/') 100% auto;
 	text-indent: -9999px;
 }
 
@@ -265,9 +266,10 @@ aside {
 .ord-scroll {
 	.transition;
 	position: absolute;
-	top: 25rem / @htmlFontSize;
+	top: 20rem / @htmlFontSize;
+	margin-top: -8%;
 	right: 0;
-	height: 100%;
+	height: 130%;
 	width: 10%;
 	opacity: 0;
 
@@ -292,6 +294,29 @@ aside {
 		}
 		&.bb-active {
 			height: 10%;
+		}
+
+		&.colored {
+			&:after {
+				background: #ec6524;
+			}
+		}
+
+		&.uncolored {
+			&:after {
+				background: #fff;
+			}
+		}
+
+		&.special:first-child {
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+
+		&.special:last-child {
+			position: absolute;
+			bottom: 0;
 		}
 
 		&:after {
@@ -405,7 +430,7 @@ aside {
 			display: inline-block;
 			width: 100%;
 			margin: 0 .5rem 8rem / @htmlFontSize 0;
-			padding: 0 60rem / @htmlFontSize 0 0;
+			padding: 0 4rem 0 0;
 			font-size: 12.5em / @htmlFontSize;
 		}
 		dd {
@@ -420,14 +445,14 @@ aside {
 		.xl-port {
 			display: inline-block;
 			position: absolute;
-			top: 0;
-			right: 40rem / @htmlFontSize;
+			right: 2.4rem;
 			width: 20px;
 			height: 20px;
-			border-radius: 10px;
-			line-height: 19px;
+			border-radius: 100%;
 			text-align: center;
 			background: #fff;
+			opacity: .7;
+			top: 0;
 
 			&:before {
 				content: "XL";
@@ -435,7 +460,8 @@ aside {
 				color: #000;
 				.robotoSlab;
 				font-style: normal;
-				font-size: 10rem / @htmlFontSize;
+				font-size: 9px;
+				line-height: 20px;
 			}
 		}
 		.prods-cross {

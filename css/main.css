@@ -4,14 +4,14 @@
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
-* {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+/* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}*/
 /* CLASSES */
 /* Wobble Vertical */
 @-webkit-keyframes wobble-vertical {
@@ -419,18 +419,40 @@ aside {
   z-index: 5;
 }
 aside .mobile-switch {
-  background: none repeat scroll 0 0 #313131;
-  bottom: 1.05rem;
-  color: #FFFFFF;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 10.3125rem;
+  height: 2.1875rem;
+  line-height: 1.5625rem;
+  border: 0.3125rem solid #5dc1af;
+  background: none;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 0.3125rem;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   cursor: pointer;
+  padding: 0;
   display: none;
-  font-size: 2em;
-  height: 3rem;
-  line-height: 2.7rem;
-  padding: 0 0.4em 0 1rem;
   position: absolute;
   right: 0.7em;
+  top: 0.9375rem;
   z-index: 1;
+  width: auto;
+  height: 3.188rem;
+  line-height: 2.75rem;
+  font-size: 1em;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+aside .mobile-switch:hover {
+  background: #5dc1af;
 }
 aside .add-to-cart {
   -webkit-transition: all 0.5s ease;
@@ -453,7 +475,7 @@ aside .add-to-cart {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   cursor: pointer;
   padding: 0;
-  margin: 0 auto 1rem;
+  margin: 0 auto .8rem;
   line-height: 1.363rem;
 }
 aside .add-to-cart:hover {
@@ -531,7 +553,7 @@ aside .footer-links .mcard {
   width: 8.65rem;
   height: 3.75rem;
   margin: 0 auto;
-  background: url(../img/main/logo.png) no-repeat center center / 100% auto;
+  background: url(../img/main/logo.svg) no-repeat center center / 200% auto;
   text-indent: -9999px;
 }
 .prod-type {
@@ -710,9 +732,10 @@ aside .footer-links .mcard {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   position: absolute;
-  top: 1.5625rem;
+  top: 1.25rem;
+  margin-top: -8%;
   right: 0;
-  height: 100%;
+  height: 130%;
   width: 10%;
   opacity: 0;
 }
@@ -737,6 +760,21 @@ aside .footer-links .mcard {
 }
 .ord-scroll .ord-scroll-dot.bb-active {
   height: 10%;
+}
+.ord-scroll .ord-scroll-dot.colored:after {
+  background: #ec6524;
+}
+.ord-scroll .ord-scroll-dot.uncolored:after {
+  background: #fff;
+}
+.ord-scroll .ord-scroll-dot.special:first-child {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.ord-scroll .ord-scroll-dot.special:last-child {
+  position: absolute;
+  bottom: 0;
 }
 .ord-scroll .ord-scroll-dot:after {
   content: "";
@@ -840,7 +878,7 @@ aside .footer-links .mcard {
   display: inline-block;
   width: 100%;
   margin: 0 0.5rem 0.5rem 0;
-  padding: 0 3.75rem 0 0;
+  padding: 0 4rem 0 0;
   font-size: 0.78125em;
 }
 .orders-ul .order-prods dd {
@@ -854,14 +892,14 @@ aside .footer-links .mcard {
 .orders-ul .order-prods .xl-port {
   display: inline-block;
   position: absolute;
-  top: 0;
-  right: 2.5rem;
+  right: 2.4rem;
   width: 20px;
   height: 20px;
-  border-radius: 10px;
-  line-height: 19px;
+  border-radius: 100%;
   text-align: center;
   background: #fff;
+  opacity: .7;
+  top: 0;
 }
 .orders-ul .order-prods .xl-port:before {
   content: "XL";
@@ -869,7 +907,8 @@ aside .footer-links .mcard {
   color: #000;
   font-family: 'Roboto Slab', serif;
   font-style: normal;
-  font-size: 0.625rem;
+  font-size: 9px;
+  line-height: 20px;
 }
 .orders-ul .order-prods .prods-cross {
   position: absolute;
@@ -1187,23 +1226,45 @@ main {
   margin: 0 0 0 0.625rem;
   font-size: 1.5625rem;
 }
+.buy-block .mobile-switch {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 10.3125rem;
+  height: 2.1875rem;
+  line-height: 1.5625rem;
+  border: 0.3125rem solid #5dc1af;
+  background: none;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-bottom: 0.3125rem;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  padding: 0;
+  display: none;
+  bottom: 0;
+  left: -3em;
+  width: auto;
+  height: 3.188rem;
+  line-height: 2.75rem;
+  font-size: 1em;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  position: absolute;
+  z-index: 1;
+}
+.buy-block .mobile-switch:hover {
+  background: #5dc1af;
+}
 .buy-block .cart-names {
   position: relative;
   height: 2.8125rem;
-}
-.buy-block .cart-names .mobile-switch {
-  background: none repeat scroll 0 0 #313131;
-  bottom: -0.25rem;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: none;
-  font-size: 2em;
-  height: 3rem;
-  left: -1.1em;
-  line-height: 2.7rem;
-  padding: 0 0.4em 0 1rem;
-  position: absolute;
-  z-index: 1;
 }
 .buy-block .cart-name {
   -webkit-transition: opacity 0.5s ease;
@@ -1476,7 +1537,7 @@ main {
 .phone-block .phone:before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -0.0625rem;
   left: -2.5rem;
   display: inline-block;
   width: 2rem;
@@ -1574,9 +1635,9 @@ main {
   white-space: nowrap;
 }
 .overlay.p_tips .tip.tip-1 {
-  top: 12%;
-  left: 0.9%;
-  width: 13%;
+  top: 13%;
+  left: 1.9%;
+  width: 17%;
   height: 9%;
   background: url(../img/main/help/tips/01.png) no-repeat 0 0 / 100% auto;
 }
@@ -1594,10 +1655,10 @@ main {
   background: url(../img/main/help/tips/01a.png) no-repeat 0 0 / 100% auto;
 }
 .overlay.p_tips .tip.tip-6 {
-  top: 24%;
+  top: 27%;
   left: 1%;
-  width: 11.8%;
-  height: 18.3%;
+  width: 17.8%;
+  height: 20.3%;
   background: url(../img/main/help/tips/02.png) no-repeat 0 0 / 100% 100%;
 }
 .overlay.p_tips .tip.tip-6 .tip-cont {
@@ -1615,9 +1676,9 @@ main {
 }
 .overlay.p_tips .tip.tip-3 {
   top: 2.2%;
-  left: 30.5%;
-  width: 4.5%;
-  height: 7.9%;
+  left: 29.1%;
+  width: 5.5%;
+  height: 8.9%;
   background: url(../img/main/help/tips/03.png) no-repeat 0 0 / 100% 100%;
 }
 .overlay.p_tips .tip.tip-3 .tip-cont {
@@ -1634,10 +1695,10 @@ main {
   background: url(../img/main/help/tips/03a.png) no-repeat 0 0 / 100% auto;
 }
 .overlay.p_tips .tip.tip-2 {
-  top: 81.2%;
-  left: 30.3%;
-  width: 4.8%;
-  height: 7.9%;
+  top: 69.2%;
+  left: 28.8%;
+  width: 5.8%;
+  height: 8.9%;
   background: url(../img/main/help/tips/04.png) no-repeat 0 0 / 100% 100%;
 }
 .overlay.p_tips .tip.tip-2 .tip-cont {
@@ -1654,10 +1715,10 @@ main {
   background: url(../img/main/help/tips/04a.png) no-repeat 0 0 / 100% auto;
 }
 .overlay.p_tips .tip.tip-5 {
-  height: 15.9%;
+  height: 12.9%;
   left: 73.75%;
-  top: 73.9%;
-  width: 9.5%;
+  top: 74.9%;
+  width: 14.5%;
   background: url(../img/main/help/tips/10.png) no-repeat 0 0 / 100% 100%;
 }
 .overlay.p_tips .tip.tip-5 .tip-cont {
@@ -1675,7 +1736,7 @@ main {
 }
 .overlay.p_tips .tip.tip-8 {
   height: 4.5%;
-  left: 92.2%;
+  left: 90%;
   top: 2.8%;
   width: 2.3%;
   background: url(../img/main/help/tips/06.png) no-repeat 0 0 / 100% 100%;
@@ -1695,8 +1756,8 @@ main {
 }
 .overlay.p_tips .tip.tip-4 {
   height: 5.3%;
-  left: 95.5%;
-  top: 25.4%;
+  left: 94.5%;
+  top: 28.4%;
   width: 3%;
   background: url(../img/main/help/tips/07.png) no-repeat 0 0 / 100% 100%;
 }
@@ -1715,8 +1776,8 @@ main {
 }
 .overlay.p_tips .tip.tip-7 {
   height: 6.9%;
-  left: 52%;
-  top: 47.45%;
+  left: 58%;
+  top: 45.45%;
   width: 4%;
   background: url(../img/main/help/tips/08.png) no-repeat 0 0 / 100% 100%;
 }
@@ -1734,10 +1795,10 @@ main {
   background: url(../img/main/help/tips/08a.png) no-repeat 0 0 / 100% auto;
 }
 .overlay.p_tips .tip.tip-9 {
-  height: 18.9%;
-  left: 0.9%;
-  top: 71.9%;
-  width: 12.1%;
+  height: 15.9%;
+  left: 3.5%;
+  top: 75.9%;
+  width: 14.1%;
   background: url(../img/main/help/tips/09.png) no-repeat 0 0 / 100% 100%;
 }
 .overlay.p_tips .tip.tip-9 .tip-cont {
@@ -2438,6 +2499,11 @@ input.js-radio {
     width: 100%;
   }
 }
+@media screen and (min-height: 0) and (max-height: 700px) {
+  .footer-links {
+    margin-bottom: 10px !important;
+  }
+}
 @media screen and (min-height: 0) and (max-height: 767px) {
   body {
     position: relative;
@@ -2520,6 +2586,21 @@ input.js-radio {
   }
 }
 @media screen and (max-width: 640px) {
+  .ord-scroll {
+    margin-top: 0;
+  }
+  .mobile-switch {
+    display: block !important;
+  }
+  .ordered .orded-title {
+    font-size: 1.5rem;
+  }
+  .ordered .orded-text {
+    font-size: 1.2rem;
+  }
+  .ordered .orded-close {
+    font-size: .9rem;
+  }
   .map-wrapper .season {
     top: 14.6875rem;
   }
@@ -2682,7 +2763,6 @@ input.js-radio {
     text-align: center;
   }
   aside .cart-win {
-    overflow: visible;
     margin: 6.813rem 0 0.8rem;
   }
   aside .orders-win {
@@ -2834,8 +2914,9 @@ input.js-radio {
     top: -0.4em;
   }
   .buy-block .add-to-cart {
+    position: relative;
     width: 70%;
-    margin: 0 auto -4px;
+    left: 25px;
     height: 3.188rem;
     line-height: 2.563rem;
     font-size: 1em;

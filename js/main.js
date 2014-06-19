@@ -449,7 +449,7 @@ var Cart = (function() {
 
 			var idStr = itemId_two ? 'data-id=' + itemId_one + ' data-id-two=' + itemId_two : 'data-id=' + itemId_one ;
 			var cartBlock = $('.orders-li[data-id=' + cartId + ']');
-			var name = $('.select-main').length ? $('.select-main .product-item.active .item-name').text() + ' и ' + $('.select-add .product-item.active .item-name').text() : $('.select-add .product-item.active .item-name').text();
+			var name = $('.select-main').length ? $('.select-add .product-item.active .item-name').text() + ' и ' + $('.select-main .product-item.active .item-name').text(): $('.select-add .product-item.active .item-name').text();
 			
 			// ID товара в корзине
 			var incart_id = cartBlock.find('.one-item').length + 1;
@@ -653,13 +653,19 @@ var Scroll = (function(){
 	var scrollIt = function(number) {
 		$('.ord-scroll-dot').removeClass('active').removeClass('b-active').removeClass('bb-active');
 
-		if(!(number < 2)) $('.ord-scroll-dot').eq(number-2).addClass('bb-active');
-		if(!(number < 1)) $('.ord-scroll-dot').eq(number-1).addClass('b-active');
-		$('.ord-scroll-dot').eq(number).addClass('active');
-		$('.ord-scroll-dot').eq(number+1).addClass('b-active');
-		$('.ord-scroll-dot').eq(number+2).addClass('bb-active');
+		if(!(number < 2)) $('.ord-scroll-dot:not(.special)').eq(number-2).addClass('bb-active');
+		if(!(number < 1)) $('.ord-scroll-dot:not(.special)').eq(number-1).addClass('b-active');
+		$('.ord-scroll-dot:not(.special)').eq(number).addClass('active');
+		$('.ord-scroll-dot:not(.special)').eq(number+1).addClass('b-active');
+		$('.ord-scroll-dot:not(.special)').eq(number+2).addClass('bb-active');
 
-
+		if($('.orders-win').scrollTop() == 0) {
+			$('.ord-scroll-dot.special').addClass('colored');
+			$('.ord-scroll-dot:not(.special)').eq(0).addClass('uncolored');
+		} else {
+			$('.ord-scroll-dot.special').removeClass('colored');
+			$('.ord-scroll-dot:not(.special)').eq(0).removeClass('uncolored');
+		}
 
 		//TODO: testing
 		/*if(number == 1) {
@@ -678,8 +684,10 @@ var Scroll = (function(){
 
 	var init = function() {
 		for(var i = 0; i < amount; i++) {
-			$('<div class="ord-scroll-dot"></div>').appendTo('.ord-scroll')/*.css('top', i*80/amount + '%')*/;
+			$('<div class="ord-scroll-dot"></div>').appendTo('.ord-scroll');
 		}
+		$('<div class="ord-scroll-dot special"></div>').prependTo('.ord-scroll');
+		//$('<div class="ord-scroll-dot special"></div>').appendTo('.ord-scroll');
 		scrollIt(0);
 	}
 

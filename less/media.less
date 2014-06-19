@@ -28,6 +28,11 @@
 		}
 	}
 }
+@media screen and (min-height: 0) and (max-height: 700px)  {
+	.footer-links {
+		margin-bottom: 10px !important;
+	}
+}
 @media screen and (min-height: 0) and (max-height: 767px)  {
 	body {
 		position: relative;
@@ -127,6 +132,21 @@
 }
 //Mobile version
 @media screen and (max-width: 640px) {
+	.ord-scroll {
+		margin-top: 0;
+	}
+	.mobile-switch {
+		display: block !important;
+	}
+	.ordered .orded-title {
+		font-size: 1.5rem;
+	}
+	.ordered .orded-text {
+		font-size: 1.2rem;
+	}
+	.ordered .orded-close {
+		font-size: .9rem;
+	}
 	.map-wrapper .season {
 		top: 235rem / @htmlFontSize;
 	}
@@ -302,7 +322,7 @@
 			text-align: center;
 		}
 		.cart-win {
-			overflow: visible;
+			//overflow: visible;
 			margin: 6.813rem 0 0.8rem;
 		}
 		.orders-win {
@@ -472,9 +492,9 @@
 			}
 		}
 		.add-to-cart {
+			position: relative;
 			width: 70%;
-			margin: 0 auto -4px;
-
+			left: 25px;
 			height: 3.188rem;
     		line-height: 2.563rem;
     		font-size: 1em;	
