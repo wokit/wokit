@@ -443,7 +443,7 @@ aside .mobile-switch {
   position: absolute;
   right: 0.7em;
   top: 0.9375rem;
-  z-index: 1;
+  z-index: 6;
   width: auto;
   height: 3.188rem;
   line-height: 2.75rem;
@@ -730,8 +730,8 @@ aside .footer-links .mcard {
   position: relative;
   height: 25.7rem;
   overflow: auto;
-  width: 110%;
-  padding-right: 15%;
+  width: 120%;
+  padding-right: 20%;
 }
 .ord-scroll {
   -webkit-transition: all 0.5s ease;
@@ -799,6 +799,7 @@ aside .footer-links .mcard {
   margin: 0;
   padding: 0;
   list-style: none;
+  padding-right: 5%;
 }
 .orders-ul .orders-li {
   position: relative;
@@ -926,6 +927,9 @@ aside .footer-links .mcard {
 }
 .orders-ul .order-prods .prods-cross:hover {
   background-image: url(../img/cross-active.svg);
+}
+.touch .add-to-cart:hover {
+  background: none !important;
 }
 .orders-total {
   color: #fff;
@@ -1290,9 +1294,11 @@ main {
   font-size: 0.875rem;
   padding-left: 45px;
   opacity: 0;
+  z-index: 1;
 }
 .buy-block .cart-name.active {
   opacity: 1;
+  z-index: 5;
 }
 .buy-block .cart-name:before {
   content: "";
@@ -2077,32 +2083,65 @@ main {
   display: inline-block;
   position: relative;
   top: 0.0625rem;
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.8125rem;
+  height: 0.8125rem;
   border-radius: 0.125rem;
   border: 1px solid #fff;
   margin-right: 0.625rem;
   cursor: pointer;
+  vertical-align: top;
+  /*
+	&.checked {
+		&:before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			top: 50%;
+			margin-top: -1px;
+			background: #fff;
+			.rotate(45deg);
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			top: 50%;
+			margin-top: -1px;
+			background: #fff;
+			.rotate(-45deg);
+		}
+	}*/
 }
-.checkbox.checked:before {
-  content: "";
+.checkbox.checked .checkbox-line {
   position: absolute;
   width: 100%;
-  height: 2px;
   top: 50%;
+  height: 2px;
   margin-top: -1px;
+  background: none;
+}
+.checkbox.checked .checkbox-line:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: #fff;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.checkbox.checked:after {
+.checkbox.checked .checkbox-line:after {
   content: "";
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 2px;
-  top: 50%;
-  margin-top: -1px;
+  height: 100%;
   background: #fff;
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
@@ -2576,6 +2615,15 @@ input.js-radio {
   }
 }
 @media screen and (max-width: 640px) {
+  .orders-ul {
+    padding: 0;
+  }
+  .ord-scroll {
+    display: none;
+  }
+  .product-in {
+    top: 5%;
+  }
   .ord-scroll {
     margin-top: 0;
   }
@@ -2655,7 +2703,7 @@ input.js-radio {
     opacity: 0;
   }
   .mobile-ordername.orders-active {
-    top: -48%;
+    top: -10.625rem;
     opacity: 1;
   }
   h1 {
@@ -2753,13 +2801,14 @@ input.js-radio {
     text-align: center;
   }
   aside .cart-win {
+    overflow: visible;
     margin: 6.813rem 0 0.8rem;
   }
   aside .orders-win {
     height: 22rem;
-    padding: 2rem 0 0 0;
+    padding: 2rem 20% 0 0;
     font-size: 1.3em;
-    width: 100%;
+    width: 120%;
   }
   aside .orders-win .orders-li {
     width: 80%;
@@ -3110,6 +3159,9 @@ and (orientation : portrait) {
   .mobile-ordername.orders-active {
     top: -39%;
   }
+}
+.mobile-ordername.orders-active {
+  top: -10.625rem !important;
 }
 /* ==========================================================================
    Helper classes

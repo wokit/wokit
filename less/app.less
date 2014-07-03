@@ -278,9 +278,11 @@ main {
 		font-size: 14rem / @htmlFontSize;
 		padding-left: 45px;
 		opacity: 0;
+		z-index: 1;
 
 		&.active {
 			opacity: 1;
+			z-index: 5;
 		}
 
 		&:before {
@@ -1116,13 +1118,48 @@ main {
 	display: inline-block;
 	position: relative;
 	top: 1rem / @htmlFontSize;
-	width: 10rem / @htmlFontSize;
-	height: 10rem / @htmlFontSize;
+	width: 13rem / @htmlFontSize;
+	height: 13rem / @htmlFontSize;
 	border-radius: 2rem / @htmlFontSize;
 	border: 1px solid #fff;
 	margin-right: 10rem / @htmlFontSize;
 	cursor: pointer;
+	vertical-align: top;
 
+	&.checked {
+
+		.checkbox-line {
+			position: absolute;
+			width: 100%;
+			top: 50%;
+			height: 2px;
+			margin-top: -1px;
+			background: none;
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #fff;
+				.transform(rotate(45deg));
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #fff;
+				.transform(rotate(-45deg));
+			}
+		}
+	}
+/*
 	&.checked {
 		&:before {
 			content: "";
@@ -1145,7 +1182,7 @@ main {
 			background: #fff;
 			.rotate(-45deg);
 		}
-	}
+	}*/
 }
 
 .ord-pay {

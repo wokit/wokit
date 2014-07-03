@@ -14,7 +14,7 @@ aside {
 	    position: absolute;
 	    right: 0.7em;
 	    top: 15rem / @htmlFontSize;
-	    z-index: 1;
+	    z-index: 6;
 	    width: auto;
 	    height: 3.188rem;
 	    line-height: 2.75rem;
@@ -43,6 +43,7 @@ aside {
 			margin: 0 10rem / @htmlFontSize 0 0;
 		}
 	}
+
 	.footer-links {
 		.list-unstyled;
 		margin: 10rem / @htmlFontSize 0 15rem / @htmlFontSize;
@@ -265,8 +266,8 @@ aside {
 	position: relative;
 	height: 25.7rem;
 	overflow: auto;
-	width: 110%;
-	padding-right: 15%;
+	width: 120%;
+	padding-right: 20%;
 }
 
 .ord-scroll {
@@ -344,6 +345,7 @@ aside {
 .orders-ul {
 	position: relative;
 	.list-unstyled;
+	padding-right: 5%;
 
 	.orders-li {
 		position: relative;
@@ -483,6 +485,14 @@ aside {
 			&:hover {
 				background-image: url(../img/cross-active.svg);
 			}		
+		}
+	}
+}
+
+.touch {
+	.add-to-cart {
+		&:hover {
+			background: none !important;
 		}
 	}
 }
